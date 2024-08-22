@@ -10,7 +10,8 @@ def counter(name):
             letters[letter] = 1
         
     #letters = letters(sorted(name.items, key=lambda item: item[1], reverse=True))
-    top = list(letters.items())[:3]
+    #top = sorted(letters.items())[:3]
+    top = sorted(letters.items(), key=lambda item: (-item[1], item[0]))[:3]
 
     for key, value in top:
         print(f"{key} {value}")
@@ -20,5 +21,5 @@ def counter(name):
 
 
 if __name__ == '__main__':
-    value = "Gogloe"
+    value = "aaabbbbeeccc"
     counter(value)
