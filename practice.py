@@ -1,25 +1,11 @@
-# Set up a letter counter in a string. Count the top 3 most occuring letters and then print the letter and the number of occurances of that letter. Next if the number
-# of occurances are the same put them in alphabetical order. 
-def counter(name):
-    letters = {}
-    name = name.lower()
-    for letter in name:
-        if letter in letters:
-            letters[letter] += 1
-        else:
-            letters[letter] = 1
-        
-    #letters = letters(sorted(name.items, key=lambda item: item[1], reverse=True))
-    #top = sorted(letters.items())[:3]
-    top = sorted(letters.items(), key=lambda item: (-item[1], item[0]))[:3]
+#Take input string and seperate it based at the , and the . and then print so if its 100,000.000 then print 100 000 and 000 on seperate
+#lines
+#regex_pattern = r"[,.]"	# Do not delete 'r'.
 
-    for key, value in top:
-        print(f"{key} {value}")
+#import re
+#print("\n".join(re.split(regex_pattern, "100,000,000.000")))
 
 
 
-
-
-if __name__ == '__main__':
-    value = "aaabbbbeeccc"
-    counter(value)
+#You are given a string and you need to find the first occurance of the repeating alphanumeric character, and if there is not one the print -1.
+s = "..12345678910111213141516171820212223"
