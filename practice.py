@@ -8,4 +8,14 @@
 
 
 #You are given a string and you need to find the first occurance of the repeating alphanumeric character, and if there is not one the print -1.
+import re
+
 s = "..12345678910111213141516171820212223"
+
+for letter in s:
+        if letter.isalnum():
+                x = re.search(letter, s)
+
+                if x:
+                    print(letter)
+                    quit()
