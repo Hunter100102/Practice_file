@@ -10,12 +10,11 @@
 #You are given a string and you need to find the first occurance of the repeating alphanumeric character, and if there is not one the print -1.
 import re
 
-s = "..12345678910111213141516171820212223"
+s = "__commit__"
 
-for letter in s:
-        if letter.isalnum():
-                x = re.search(letter, s)
+match = re.search(r'([a-zA-Z0-9])\1', s)
 
-                if x:
-                    print(letter)
-                    quit()
+if match:
+    print(match.group(1))
+else:
+    print(-1)
