@@ -20,7 +20,9 @@
     #print(-1)
 
 #Find all substrings that contain two or more vowels.
+import re
 s = "rabcdeefgyYhFjkIoomnpOeorteeeeet"
+match = re.search(r'([aaeeiioouu])')
 
 
 
