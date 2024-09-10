@@ -19,15 +19,6 @@
 #else:
     #print(-1)
 
-#Find all substrings that contain two or more vowels.
-import re
-s = "rabcdeefgyYhFjkIoomnpOeorteeeeet"
-match = re.search(r'([aaeeiioouu])')
-
-
-
-#Output
-#ee
-#Ioo
-#Oeo
-#eeeee
+#You are given a string . It consists of alphanumeric characters, spaces and symbols(+,-).
+#Your task is to find all the substrings of  that contains  or more vowels.
+#Also, these substrings must lie in between  consonants and should contain vowels only.
