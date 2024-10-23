@@ -59,3 +59,26 @@
 #    countApplesAndOranges(s, t, a, b, apples, oranges) 
  #building the house variable is not necessary and creates more latency that is needed, an if statement with a range can be used if speed is needed. 
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------
+
+values = {'Alice': 0,'Bob': 0}
+
+def compareTriplets(a, b):
+    # Write your code here
+    for i in range(len(a)):
+        if a[i]>b[i]:
+            print(a[i])
+            values['Alice'] += 1
+        elif a[i]==b[i]:
+            x=0
+        else:
+            print(b[i])
+            values['Bob'] += 1
+            
+    print(values['Alice'], values['Bob'])
+
+if __name__ == '__main__':
+    a=[5,6,7]
+    b=[3,6,10]
+
+    compareTriplets(a,b)
