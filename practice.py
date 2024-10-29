@@ -60,25 +60,37 @@
  #building the house variable is not necessary and creates more latency that is needed, an if statement with a range can be used if speed is needed. 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------
+#Keeping score
 
-values = {'Alice': 0,'Bob': 0}
+#values = {'Alice': 0,'Bob': 0}
 
-def compareTriplets(a, b):
+#def compareTriplets(a, b):
     # Write your code here
-    for i in range(len(a)):
-        if a[i]>b[i]:
-            print(a[i])
-            values['Alice'] += 1
-        elif a[i]==b[i]:
-            x=0
-        else:
-            print(b[i])
-            values['Bob'] += 1
+    #for i in range(len(a)):
+        #if a[i]>b[i]:
+            #print(a[i])
+            #values['Alice'] += 1
+        #elif a[i]==b[i]:
+            #x=0
+        #else:
+            #print(b[i])
+            #values['Bob'] += 1
             
-    print(values['Alice'], values['Bob'])
+    #print(values['Alice'], values['Bob'])
+
+#if __name__ == '__main__':
+    #a=[5,6,7]
+    #b=[3,6,10]
+
+    #compareTriplets(a,b)
+
+def aVeryBigSum(ar):
+    sum = 0
+    for num in ar:
+        sum += int(num)
+        
+    print(sum)
 
 if __name__ == '__main__':
-    a=[5,6,7]
-    b=[3,6,10]
-
-    compareTriplets(a,b)
+    x = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
+    aVeryBigSum(x)
