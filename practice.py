@@ -84,13 +84,36 @@
 
     #compareTriplets(a,b)
 
-def aVeryBigSum(ar):
-    sum = 0
-    for num in ar:
-        sum += int(num)
+#def aVeryBigSum(ar):
+    #sum = 0
+    #for num in ar:
+        #sum += int(num)
         
-    print(sum)
+    #print(sum)
+
+#if __name__ == '__main__':
+    #x = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
+    #aVeryBigSum(x)
+
+#Diagnal matrix setup
+
+
+
+def diagonalDifference(arr):
+    # Write your code here
+    sum_1 = 0
+    sum_2 = 0
+    for i in range(len(arr)):
+        sum_1 += arr[i][i] 
+        sum_2 += arr[i][len(arr) - 1 - i] 
+
+    print(abs(sum_1-sum_2)) 
 
 if __name__ == '__main__':
-    x = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
-    aVeryBigSum(x)
+    x = [[1, 2, 3],
+           [4, 5, 6],
+           [9, 8, 9]]
+
+    diagonalDifference(x)
+
+
