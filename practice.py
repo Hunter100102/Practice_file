@@ -99,21 +99,56 @@
 
 
 
-def diagonalDifference(arr):
+# def diagonalDifference(arr):
+#     # Write your code here
+#     sum_1 = 0
+#     sum_2 = 0
+#     for i in range(len(arr)):
+#         sum_1 += arr[i][i] 
+#         sum_2 += arr[i][len(arr) - 1 - i] 
+
+#     print(abs(sum_1-sum_2)) 
+
+# if __name__ == '__main__':
+#     x = [[1, 2, 3],
+#            [4, 5, 6],
+#            [9, 8, 9]]
+
+#     diagonalDifference(x)
+
+
+#Ratio of of neg, pos, and 0
+#def plusMinus(arr):
     # Write your code here
-    sum_1 = 0
-    sum_2 = 0
-    for i in range(len(arr)):
-        sum_1 += arr[i][i] 
-        sum_2 += arr[i][len(arr) - 1 - i] 
+#    neg = 0
+    #pos = 0
+    #zero = 0
+    
+    #for num in arr:
+        #if num < 0:
+            #neg += 1
+        #elif num > 0:
+            #pos += 1
+        #else:
+            #zero += 1
+        
+    #print(round(neg/n, 6))
+    #print(round(pos/n, 6))
+    #print(round(zero/n, 6))
 
-    print(abs(sum_1-sum_2)) 
 
+#if __name__ == '__main__':
+    #n = 6
+    #x = [-4, 3, -9, 0, 4, 1]
+    #plusMinus(x)
+
+#---------------------------------------------------------------------------------------------------------------------------
+
+#Runner up
 if __name__ == '__main__':
-    x = [[1, 2, 3],
-           [4, 5, 6],
-           [9, 8, 9]]
+    n = 5
+    arr = [2,3,6,6,5]
 
-    diagonalDifference(x)
-
+    A = []
+    for num in arr:
 
