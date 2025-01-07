@@ -157,55 +157,69 @@
     #A = sorted(A,reverse=True)
     #print(A[1])
 #----------------------------------------------------------------------------------------------------------------------------------
-#These expressions return the indices of the start and end of the substring matched by the group.
+# any()
+# This expression returns True if any element of the iterable is true.
+# If the iterable is empty, it will return False.
 
-#Code
+# Code
 
-#>>> import re
-#>>> m = re.search(r'\d+','1234')
-#>>> m.end()
-#4
-#>>> m.start()
-#0
-#Task
-#You are given a string .
-#Your task is to find the indices of the start and end of string  in .
+# >>> any([1>0,1==0,1<0])
+# True
+# >>> any([1<0,2<1,3<2])
+# False
 
-#Input Format
+# all()
+# This expression returns True if all of the elements of the iterable are true.
+# If the iterable is empty, it will return True.
 
-#The first line contains the string .
-#The second line contains the string .
+# Code
 
-#Constraints
+# >>> all(['a'<'b','b'<'c'])
+# True
+# >>> all(['a'<'b','c'<'b'])
+# False
 
+# Task
 
+# You are given a space separated list of integers. If all the integers are positive, then you need to check if any integer is a palindromic integer.
 
-#Output Format
+# Input Format
 
-#Print the tuple in this format: (start _index, end _index).
-#If no match is found, print (-1, -1).
+# The first line contains an integer N. N is the total number of integers in the list.
+# The second line contains the space separated list of N integers.
 
-#Sample Input
+# Constraints
 
-#aaadaa
-#aa
-#Sample Output
+# Output Format
 
-#(0, 1)  
-#(1, 2)
-#(4, 5)
+# Print True if all the conditions of the problem statement are satisfied. Otherwise, print False.
 
+# Sample Input
 
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-import re
-def startnend(a,b):
-    result = re.search(b,a)
-    print(result.end())
+# 5
+# 12 9 61 5 14 
 
+# Sample Output
 
+# True
+
+# Explanation
+
+# Condition 1: All the integers in the list are positive.
+# Condition 2: 5 is a palindromic integer.
+
+# Hence, the output is True.
+
+# Can you solve this challenge in 3 lines of code or less?
+# There is no penalty for solutions that are correct but have more than 3 lines.
+
+def check(n,l):
+    #all(['0'<'b'])
+    #print (range(0,n))
+    print('1')
 
 if __name__ == '__main__':
-    s = "aaadaa"
-    k = "aa"
+    n = 5
+    l = [12,9,61,5,14]
 
-    startnend(s,k)
+
