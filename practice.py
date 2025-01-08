@@ -180,10 +180,34 @@
 # ginortS1324
 
 #s = input()
-def sorting(s):
-    new = s.sorted()
-    print(new)
+#def sorting(s):
+   # l = ''
+  #  u = ''
+ #   oddn = ''
+#    evenn = ''
+    #lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    #upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+   # oddnum = ['1','3','5','7','9']
+  #  evennum = ['0','2','4','6','8']
 
-if __main__ == '__name__':
-    x = Sorting1234
-    sorting(x)
+ #   for letter in s:
+#        if letter in lower:
+        #    l = l + letter
+       # elif letter in upper:
+      #      u = u + letter
+     #   elif letter in oddnum:
+    #        oddn = oddn + letter
+   #     elif letter in evennum:
+  #          evenn = evenn + letter
+
+ #   ol = ''.join(sorted(l))
+#    ou = ''.join(sorted(u))
+    #odn = ''.join(sorted(oddn))
+   # oen = ''.join(sorted(evenn))
+
+  #  unsorted_full = ol+ou+odn+oen
+ #   print(unsorted_full)
+
+#if __name__ == '__main__':
+#    x = '1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik9ol0pQWERTYUIOPASDFGHJKLZXCVBNM'
+    #sorting(x)
