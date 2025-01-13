@@ -211,3 +211,19 @@
 #if __name__ == '__main__':
 #    x = '1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik9ol0pQWERTYUIOPASDFGHJKLZXCVBNM'
     #sorting(x)
+
+#------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+if __name__ == '__main__':
+    n = 5
+    test_cases = ["1.414", "+.5486468", "0.5.0", "1+1.0","0"]
+
+    for test in test_cases:
+        if test[0] == "-" or test[0] == "+" or test[0] == ".":
+            new = test[1:]
+            if new.isnumeric:
+                print("True")
+        else:
+            print("False")
