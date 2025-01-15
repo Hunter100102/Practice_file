@@ -214,16 +214,34 @@
 
 #------------------------------------------------------------------------------------------------------------------------------------
 
+# import re
 
+# if __name__ == '__main__':
+#     n = 5
+#     test_cases = ["1.414", "+.5486468", "0.5.0", "1+1.0","0"]
 
-if __name__ == '__main__':
-    n = 5
-    test_cases = ["1.414", "+.5486468", "0.5.0", "1+1.0","0"]
+#     for test in test_cases:
+#         if re.match(r"^(\+|-|.)",test):
+#             if re.match(r"^[^.]*\.[^.]*$", test):
+#                 print("True")
+#             else:
+#                 print("False")
 
-    for test in test_cases:
-        if test[0] == "-" or test[0] == "+" or test[0] == ".":
-            new = test[1:]
-            if new.isnumeric:
-                print("True")
-        else:
-            print("False")
+# ^[+-]?: Matches an optional + or - at the start.
+# \d*: Matches zero or more digits before the decimal point.
+# \.: Matches a literal dot (decimal point).
+# \d+: Matches one or more digits after the decimal point.
+# $: Ensures the match is for the entire string.
+
+# import re
+
+# if __name__ == '__main__':
+#     n = int(input())
+    
+#     for i in range(n):
+#         test = input().strip()
+#         # Check if the input is a valid decimal number
+#         if re.match(r"^[+-]?\d*\.\d+$", test):
+#             print("True")
+#         else:
+#             print("False")
