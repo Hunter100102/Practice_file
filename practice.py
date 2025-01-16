@@ -212,7 +212,7 @@
 #    x = '1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik9ol0pQWERTYUIOPASDFGHJKLZXCVBNM'
     #sorting(x)
 
-#------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------REGEXS!!!!!!!
 
 # import re
 
@@ -245,3 +245,19 @@
 #             print("True")
 #         else:
 #             print("False")
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#You are given a string . It consists of alphanumeric characters, spaces and symbols(+,-).
+#Your task is to find all the substrings of  that contains  or more vowels.
+#Also, these substrings must lie in between  consonants and should contain vowels only.
+
+import re
+#s = input()
+#Expected output: aa
+#aa
+#aa
+s = "rabcabaabaabaabaaei"
+
+x = re.findall(r'[aeiouAEIOU]{2,}',s)
+
+for items in x:
+    print(items)
