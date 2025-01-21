@@ -250,14 +250,40 @@
 #Your task is to find all the substrings of  that contains  or more vowels.
 #Also, these substrings must lie in between  consonants and should contain vowels only.
 
-import re
+#import re
 #s = input()
 #Expected output: aa
 #aa
 #aa
-s = "rabcabaabaabaabaaei"
+#s = "rabcdeefgyYhFjkIoomnpOeorteeeeet"
 
-x = re.findall(r'[aeiouAEIOU]{2,}',s)
+#x = re.findall(r'(?<=[^aeiouAEIOU])[aeiouAEIOU]{2,}(?=[^aeiouAEIOU])',s)
 
-for items in x:
-    print(items)
+
+#if not x:
+    #print("-1")
+#else:
+    #for items in x:
+        #print(items)
+#-----------------------------------------------------------------------MORE REGEX------------------------------------------------------------------------------------------------
+s = "aaadaa"
+k = "aa"
+#Expected output
+#(0,1)
+#(1,2)
+#(4,5)
+#Print the tuple in and find the indicies of the start and end of string k in s
+
+
+import re
+def startnend(a,b):
+    result = re.search(b,a)
+    print(result.end())
+
+
+
+if __name__ == '__main__':
+    s = input()
+    k = input()
+
+    startnend(s,k)
