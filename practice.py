@@ -266,8 +266,6 @@
     #for items in x:
         #print(items)
 #-----------------------------------------------------------------------MORE REGEX------------------------------------------------------------------------------------------------
-s = "aaadaa"
-k = "aa"
 #Expected output
 #(0,1)
 #(1,2)
@@ -277,13 +275,20 @@ k = "aa"
 
 import re
 def startnend(a,b):
-    result = re.search(b,a)
+    n = len(b)
+    b_pattern = f"[{b}]{{{n},}}"
+    #print(b_pattern)
+
+    result = re.search(b_pattern,a)
+    print(result.start())
     print(result.end())
 
 
 
 if __name__ == '__main__':
-    s = input()
-    k = input()
+    #s = input()
+    #k = input()
+    s = "aaadaa"
+    k = "aa"
 
     startnend(s,k)
