@@ -275,9 +275,10 @@
 
 import re
 def startnend(a,b):
-    pattern = re.compile(b)
-    r = pattern.search(a)
-    if not r: print("(-1, -1)")
+    pattern = re.compile(b) #This could creates a regular expression object by compiling a regular expression pattern
+    #Output: re.compile('aa')
+    r = pattern.search(a) #This searches through strings and checks the indicies 
+    if not r: print("(-1, -1)") #If a [] empty set is returned
     while r:
         print("({0}, {1})".format(r.start(), r.end() - 1))
         r = pattern.search(a,r.start() + 1)
