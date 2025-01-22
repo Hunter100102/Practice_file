@@ -275,13 +275,12 @@
 
 import re
 def startnend(a,b):
-    n = len(b)
-    b_pattern = f"[{b}]{{{n},}}"
-    #print(b_pattern)
-
-    result = re.search(b_pattern,a)
-    print(result.start())
-    print(result.end())
+    pattern = re.compile(b)
+    r = pattern.search(a)
+    if not r: print("(-1, -1)")
+    while r:
+        print("({0}, {1})".format(r.start(), r.end() - 1))
+        r = pattern.search(a,r.start() + 1)
 
 
 
