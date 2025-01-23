@@ -273,22 +273,137 @@
 #Print the tuple in and find the indicies of the start and end of string k in s
 
 
-import re
-def startnend(a,b):
-    pattern = re.compile(b) #This could creates a regular expression object by compiling a regular expression pattern
-    #Output: re.compile('aa')
-    r = pattern.search(a) #This searches through strings and checks the indicies 
-    if not r: print("(-1, -1)") #If a [] empty set is returned
-    while r:
-        print("({0}, {1})".format(r.start(), r.end() - 1))
-        r = pattern.search(a,r.start() + 1)
+#import re
+#def startnend(a,b):
+#    pattern = re.compile(b) #This could create a regular expression object by compiling a regular expression pattern
+#    #Output: re.compile('aa')
+#    r = pattern.search(a) #This searches through strings and checks the indices 
+#    if not r: print("(-1, -1)") #If a [] empty set is returned
+#    while r:
+#        print("({0}, {1})".format(r.start(), r.end() - 1))
+#        r = pattern.search(a,r.start() + 1)
 
 
+#if __name__ == '__main__':
+#    #s = input()
+#    #k = input()
+#    s = "aaadaa"
+#    k = "aa"
 
-if __name__ == '__main__':
-    #s = input()
-    #k = input()
-    s = "aaadaa"
-    k = "aa"
+#    startnend(s,k)
 
-    startnend(s,k)
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# The re.sub() tool (sub stands for substitution) evaluates a pattern and, for each valid match, it calls a method (or lambda).
+# The method is called for all matches and can be used to modify strings in different ways.
+# The re.sub() method returns the modified string as an output.
+
+# Learn more about .
+
+# Transformation of Strings
+
+# Code
+
+# import re
+
+# # Squaring numbers
+# def square(match):
+#     number = int(match.group(0))
+#     return str(number**2)
+
+# print(re.sub(r"\d+", square, "1 2 3 4 5 6 7 8 9"))
+# Output
+
+# 1 4 9 16 25 36 49 64 81
+
+# Replacements in Strings
+
+# Code
+
+# import re
+
+# html = """
+# <head>
+# <title>HTML</title>
+# </head>
+# <object type="application/x-flash" 
+#   data="your-file.swf" 
+#   width="0" height="0">
+#   <!-- <param name="movie"  value="your-file.swf" /> -->
+#   <param name="quality" value="high"/>
+# </object>
+# """
+
+# print(re.sub("(<!--.*?-->)", "", html)) # remove comment
+# Output
+
+# <head>
+# <title>HTML</title>
+# </head>
+# <object type="application/x-flash" 
+#   data="your-file.swf" 
+#   width="0" height="0">
+
+#   <param name="quality" value="high"/>
+# </object>
+
+# Task
+
+# You are given a text of  lines. The text contains && and || symbols.
+# Your task is to modify those symbols to the following:
+
+# && → and
+# || → or
+# Both && and || should have a space " " on both sides.
+
+# Input Format
+
+# The first line contains the integer, .
+# The next  lines each contain a line of the text.
+
+# Constraints
+
+# Neither && nor || occur in the start or end of each line.
+
+# Output Format
+
+# Output the modified text.
+
+# Sample Input
+
+# 11
+# a = 1;
+# b = input();
+
+# if a + b > 0 && a - b < 0:
+#     start()
+# elif a*b > 10 || a/b < 1:
+#     stop()
+# print set(list(a)) | set(list(b)) 
+# # Note do not change &&& or ||| or & or |
+# # Only change those '&&' which have space on both sides.
+# # Only change those '||' which have space on both sides.
+
+# Sample Output
+
+# a = 1;
+# b = input();
+
+# if a + b > 0 and a - b < 0:
+#     start()
+# elif a*b > 10 or a/b < 1:
+#     stop()
+# print set(list(a)) | set(list(b)) 
+# # Note do not change &&& or ||| or & or |
+# # Only change those '&&' which have space on both sides.
+# # Only change those '||' which have space on both sides.
+
+# Language
+# Pypy 3
+# More
+# 1
+# # Enter your code here. Read input from STDIN. Print output to STDOUT
+# Line: 1 Col: 70
+
+# Test against custom input
+
+
