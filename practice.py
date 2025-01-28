@@ -405,6 +405,6 @@
 # # Enter your code here. Read input from STDIN. Print output to STDOUT
 # Line: 1 Col: 70
 
-# Test against custom input
+# Start code here
 
 
