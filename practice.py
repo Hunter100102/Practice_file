@@ -406,9 +406,11 @@
 # Line: 1 Col: 70
 
 # Start code here
+import re
+
 def fix(n,l):
     print(n,l)
-    print re.sub(r"\w", l, "or")
+    print (re.sub(r"\w", "||", "or"))
 
 
 
