@@ -408,7 +408,7 @@
 # Start code here
 def fix(n,l):
     print(n,l)
-    change = match.group(0)
+    print re.sub(r"\w", l, "or")
 
 
 
