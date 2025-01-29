@@ -436,3 +436,12 @@ if __name__ == '__main__':
     
     fix(num,lines)
 
+def fix(match):
+    if match.group(0) == '||':
+        return 'or'
+    elif match.group(0) == '&&':
+        return 'and'
+        
+test = "elif a*b > 10 && a/b < 1:"
+print(re.sub('[|]{2,}','or',test))
+#print(re.sub('[|]{2,}','or',test))
