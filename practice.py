@@ -408,13 +408,16 @@
 # Start code here
 import re
 
-def fix(n,l):
-    print(n,l)
-    print (re.sub(r"\w", "||", "or"))
-
-
-
-
+def fix(match):
+    if match.group(0) == '||':
+        return 'or'
+    elif match.group(0) == '&&':
+        return 'and'
+ 
+#singular test        
+#test = "elif a*b > 10 && a/b < 1:"
+#print(re.sub('[|]{2,}','or',test))
+#print(re.sub('[|]{2,}','or',test))
 
 if __name__ == '__main__':
     # num = int(input())
@@ -434,14 +437,6 @@ if __name__ == '__main__':
         "# Only change those '||' which have space on both sides."
     ]
     
-    fix(num,lines)
-
-def fix(match):
-    if match.group(0) == '||':
-        return 'or'
-    elif match.group(0) == '&&':
-        return 'and'
-        
-test = "elif a*b > 10 && a/b < 1:"
-print(re.sub('[|]{2,}','or',test))
-#print(re.sub('[|]{2,}','or',test))
+    result = ", ".join(lines)
+    for line in result:
+        fix(line)
