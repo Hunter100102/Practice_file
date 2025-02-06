@@ -414,10 +414,6 @@ def fix(match):
     elif match.group(0) == '&&':
         return 'and'
  
-#singular test        
-#test = "elif a*b > 10 && a/b < 1:"
-#print(re.sub('[|]{2,}','or',test))
-#print(re.sub('[|]{2,}','or',test))
 
 if __name__ == '__main__':
     # num = int(input())
@@ -437,6 +433,6 @@ if __name__ == '__main__':
         "# Only change those '||' which have space on both sides."
     ]
     
-    result = ", ".join(lines)
-    for line in result:
-        fix(line)
+    for text in lines:
+        text = re.sub(r'\|\||&&', lambda m: fix(m), text)
+        print(text)
