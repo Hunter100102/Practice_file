@@ -406,33 +406,34 @@
 # Line: 1 Col: 70
 
 # Start code here
-import re
+#import re
 
-def fix(match):
-    if match.group(0) == '||':
-        return 'or'
-    elif match.group(0) == '&&':
-        return 'and'
- 
+#def fix(match):
+#    if match.group(0) == '||':
+#        return 'or'
+#    elif match.group(0) == '&&':
+#        return 'and'
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
     # num = int(input())
-    #lines = input()
-    num = 11  # Number of lines in the input
-    lines = [
-        "a = 1;",
-        "b = input();",
-        "",
-        "if a + b > 0 && a - b < 0:",
-        "    start()",
-        "elif a*b > 10 || a/b < 1:",
-        "    stop()",
-        "print set(list(a)) | set(list(b)) ",
-        "# Note do not change &&& or ||| or & or |",
-        "# Only change those '&&' which have space on both sides.",
-        "# Only change those '||' which have space on both sides."
-    ]
-    
-    for text in lines:
-        text = re.sub(r'\|\||&&', lambda m: fix(m), text)
-        print(text)
+    # lines = input()
+    # num = 11  # Number of lines in the input
+    # lines = [
+    #    "a = 1;",
+    #    "b = input();",
+    #    "",
+    #    "if a + b > 0 && a - b < 0:",
+    #    "    start()",
+    #    "elif a*b > 10 || a/b < 1:",
+    #    "    stop()",
+    #    "print set(list(a)) | set(list(b)) ",
+    #    "# Note do not change &&& or ||| or & or |",
+    #    "# Only change those '&&' which have space on both sides.",
+    #    "# Only change those '||' which have space on both sides."
+    # ]
+
+    # for item in lines:
+    #    text = re.sub(r'\|\||&&', lambda m: fix(m), item)
+    #    print(text)
+#-----------------------------------------------------------------------------------------------------------------------------------
+#https://www.hackerrank.com/challenges/validate-a-roman-number/problem?isFullScreen=true
