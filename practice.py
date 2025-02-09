@@ -437,3 +437,8 @@
     #    print(text)
 #-----------------------------------------------------------------------------------------------------------------------------------
 #https://www.hackerrank.com/challenges/validate-a-roman-number/problem?isFullScreen=true
+regex_pattern = r""	# Do not delete 'r'.
+
+import re
+x = "CDXXI"
+print(str(bool(re.match(regex_pattern, x))))
