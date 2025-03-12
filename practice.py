@@ -437,7 +437,8 @@
     #    print(text)
 #-----------------------------------------------------------------------------------------------------------------------------------
 #https://www.hackerrank.com/challenges/validate-a-roman-number/problem?isFullScreen=true
-regex_pattern = r"[CDXI]"	# Do not delete 'r'.
+#There has got to be a better way to do this, its too much repeated stuff. 
+regex_pattern = r"(XMMM|XMM|XM|M)(DDD|DD|D)(XCCC|XCC|XC|X)(XLLL|XLL|XL|L)(IXXX|IXX|IX|X)(IVVV|IVV|IV|V)(III|II|I|)"	# Do not delete 'r'.
 
 import re
 x = "CDXXI"
