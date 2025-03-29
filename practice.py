@@ -437,7 +437,6 @@
     #    print(text)
 #-----------------------------------------------------------------------------------------------------------------------------------
 #https://www.hackerrank.com/challenges/validate-a-roman-number/problem?isFullScreen=true
-<<<<<<< HEAD
 #regex_pattern = r"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"	# Do not delete 'r'.
 
 #import re
@@ -449,20 +448,15 @@
 
 import email.utils
 
-def check(n,email):
-    print(email.utils.parseaddr)
+def check(its,email):
+    print(email.utils.parseaddr(email))
 
 if __name__ == '__main__':
     n = 2
     inputs = [
     "DEXTER <dexter@hotmail.com>",
     "VIRUS <virus!@variable.:p>"
-]
-=======
-#There has got to be a better way to do this, its too much repeated stuff. 
-regex_pattern = r"(XMMM|XMM|XM|M)(DDD|DD|D)(XCCC|XCC|XC|X)(XLLL|XLL|XL|L)(IXXX|IXX|IX|X)(IVVV|IVV|IV|V)(III|II|I|)"	# Do not delete 'r'.
+    ]
 
-import re
-x = "CDXXI"
-print(str(bool(re.match(regex_pattern, x))))
->>>>>>> d9817a86c89d6ad264faeb3dad0d5f4178c82160
+    #check(n, inputs[0])
+    print(inputs[0])
