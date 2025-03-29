@@ -437,23 +437,8 @@
     #    print(text)
 #-----------------------------------------------------------------------------------------------------------------------------------
 #https://www.hackerrank.com/challenges/validate-a-roman-number/problem?isFullScreen=true
-#regex_pattern = r"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"	# Do not delete 'r'.
+regex_pattern = r"[CDXI]"	# Do not delete 'r'.
 
-#import re
-#x = "CDXXI"
-#print(str(bool(re.match(regex_pattern, x))))
-#----------------------------------------------------------------------------------------------------------------------------------
-#https://www.hackerrank.com/challenges/validating-named-email-addresses/problem?isFullScreen=true
-#output: DEXTER <dexter@hotmail.com>
-
-import email.utils
-
-def check(n,email):
-    print(email.utils.parseaddr)
-
-if __name__ == '__main__':
-    n = 2
-    inputs = [
-    "DEXTER <dexter@hotmail.com>",
-    "VIRUS <virus!@variable.:p>"
-]
+import re
+x = "CDXXI"
+print(str(bool(re.match(regex_pattern, x))))
