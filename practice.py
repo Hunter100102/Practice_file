@@ -437,7 +437,7 @@
     #    print(text)
 #-----------------------------------------------------------------------------------------------------------------------------------
 #https://www.hackerrank.com/challenges/validate-a-roman-number/problem?isFullScreen=true
-regex_pattern = r"[CDXI]"	# Do not delete 'r'.
+regex_pattern = r"(?:C? M{0,3}| )"	# Do not delete 'r'.
 
 import re
 x = "CDXXI"
