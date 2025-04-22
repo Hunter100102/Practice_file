@@ -448,8 +448,10 @@
 
 import email.utils
 
-def check(its,email):
-    print(email.utils.parseaddr(email))
+def check(its, email_str):
+    print(email.utils.parseaddr(email_str))
+    
+
 
 if __name__ == '__main__':
     n = 2
@@ -458,5 +460,5 @@ if __name__ == '__main__':
     "VIRUS <virus!@variable.:p>"
     ]
 
-    #check(n, inputs[0])
-    print(inputs[0])
+    check(n, inputs[0])
+    #print(inputs[0])
