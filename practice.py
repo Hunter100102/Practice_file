@@ -447,11 +447,21 @@
 #output: DEXTER <dexter@hotmail.com>
 
 import email.utils
+import re
 
 def check(its, email_str):
-    data = (email.utils.formataddr(email_str))
-    result = ' '.join(data)
-    print(result)
+    #data = (email.utils.formataddr(email_str))
+    #result = ' '.join(data)
+    #print(result)
+
+    for item in email_str:
+        pattern = r'[a-zA-Z0-9]+@[a-zA-Z]+[a-zA-Z]+\.(com)'
+        x = re.search(pattern, str(item))
+        #print(x)
+        if x:
+            print(item)
+            #print(' '.join(email.utils.formataddr(item)))
+
 
 
 if __name__ == '__main__':
