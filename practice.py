@@ -449,11 +449,12 @@
 import email.utils
 import re
 
-def check(name_str, email_str):
+def check(email_str):
     pattern = r'[a-zA-Z0-9]+@[a-zA-Z]+[a-zA-Z]+\.(com)'
     for string in email_str:
-        x = re.search(string, pattern)
-        print(string)
+        x = re.search(pattern, string)
+        if x:
+            print(string)
 
 
 if __name__ == '__main__':
@@ -463,5 +464,5 @@ if __name__ == '__main__':
     "VIRUS <virus!@variable.:p>"
     ]
 
-    check(n, inputs)
+    check(inputs)
     #print(inputs[0])
