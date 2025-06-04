@@ -449,20 +449,47 @@
 import email.utils
 import re
 
-def check(email_str):
-    pattern = r'[a-zA-Z0-9]+@[a-zA-Z]+[a-zA-Z]+\.(com)'
-    for string in email_str:
-        x = re.search(pattern, string)
-        if x:
-            print(string)
+# Define a function to validate and print valid email lines
+def check(checking, numero):
+    # Compile a regular expression to validate email format:
+    # - Starts with a letter
+    # - Followed by alphanumeric characters, dot, dash, or underscore
+    # - Contains one '@' symbol
+    # - Followed by domain (letters only)
+    # - Followed by '.' and an extension of 1 to 3 letters
+    pattern = re.compile(r'^[a-zA-Z][\w\.\-]*@[a-zA-Z]+\.[a-zA-Z]{1,3}$')
 
+    # 'n' stores the number of lines to check
+    n = numero
 
+    # Loop through each input line
+    for i in range(n):
+        line = checking[i]
+
+        # Use parseaddr to extract the name and email address from the line
+        # Example: "dheeraj <dheeraj-234@gmail.com>" => name='dheeraj', addr='dheeraj-234@gmail.com'
+        name, addr = email.utils.parseaddr(line)
+
+        # Check if the extracted email address matches the regex pattern
+        if pattern.match(addr):
+            # If valid, print the original input line
+            print(line)
+
+# Main execution block
 if __name__ == '__main__':
-    n = 2
+    # Number of entries
+    n = 7
+
+    # Input list of strings in format "name <email>"
     inputs = [
-    "DEXTER <dexter@hotmail.com>",
-    "VIRUS <virus!@variable.:p>"
+        "dheeraj <dheeraj-234@gmail.com>",
+        "crap <itsallcrap>",
+        "harsh <harsh_1234@rediff.in>",
+        "kumal <kunal_shin@iop.az>",
+        "mattp <matt23@@india.in>",
+        "harsh <.harsh_1234@rediff.in>",
+        "harsh <-harsh_1234@rediff.in>"
     ]
 
-    check(inputs)
-    #print(inputs[0])
+    # Call the check function with the input list and count
+    check(inputs, n)
