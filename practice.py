@@ -446,50 +446,79 @@
 #https://www.hackerrank.com/challenges/validating-named-email-addresses/problem?isFullScreen=true
 #output: DEXTER <dexter@hotmail.com>
 
-import email.utils
-import re
+#import email.utils
+#import re
 
 # Define a function to validate and print valid email lines
-def check(checking, numero):
+#def check(checking, numero):
     # Compile a regular expression to validate email format:
     # - Starts with a letter
     # - Followed by alphanumeric characters, dot, dash, or underscore
     # - Contains one '@' symbol
     # - Followed by domain (letters only)
     # - Followed by '.' and an extension of 1 to 3 letters
-    pattern = re.compile(r'^[a-zA-Z][\w\.\-]*@[a-zA-Z]+\.[a-zA-Z]{1,3}$')
+#    pattern = re.compile(r'^[a-zA-Z][\w\.\-]*@[a-zA-Z]+\.[a-zA-Z]{1,3}$')
 
     # 'n' stores the number of lines to check
-    n = numero
+#    n = numero
 
     # Loop through each input line
-    for i in range(n):
-        line = checking[i]
+#    for i in range(n):
+#        line = checking[i]
 
         # Use parseaddr to extract the name and email address from the line
         # Example: "dheeraj <dheeraj-234@gmail.com>" => name='dheeraj', addr='dheeraj-234@gmail.com'
-        name, addr = email.utils.parseaddr(line)
+#        name, addr = email.utils.parseaddr(line)
 
         # Check if the extracted email address matches the regex pattern
-        if pattern.match(addr):
+#        if pattern.match(addr):
             # If valid, print the original input line
-            print(line)
+#            print(line)
 
 # Main execution block
-if __name__ == '__main__':
+#if __name__ == '__main__':
     # Number of entries
-    n = 7
+#    n = 7
 
     # Input list of strings in format "name <email>"
-    inputs = [
-        "dheeraj <dheeraj-234@gmail.com>",
-        "crap <itsallcrap>",
-        "harsh <harsh_1234@rediff.in>",
-        "kumal <kunal_shin@iop.az>",
-        "mattp <matt23@@india.in>",
-        "harsh <.harsh_1234@rediff.in>",
-        "harsh <-harsh_1234@rediff.in>"
-    ]
+#    inputs = [
+#        "dheeraj <dheeraj-234@gmail.com>",
+#        "crap <itsallcrap>",
+#        "harsh <harsh_1234@rediff.in>",
+#        "kumal <kunal_shin@iop.az>",
+#        "mattp <matt23@@india.in>",
+#        "harsh <.harsh_1234@rediff.in>",
+#        "harsh <-harsh_1234@rediff.in>"
+#    ]
 
     # Call the check function with the input list and count
-    check(inputs, n)
+#    check(inputs, n)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#You are given 0-50 lines of css code and you need to print out the colors with the "#" symbol in the order they are given. 
+#hookahbar.infinityfreeapp.com/void_alert_test.php
+import re
+n = 11
+inputs = [
+    "#BED",
+    "{",
+    "    color: #FfFdF8; background-color:#aef;",
+    "    font-size: 123px;",
+    "    background: -webkit-linear-gradient(top, #f9f9f9, #fff);",
+    "}",
+    "#Cab",
+    "{",
+    "    background-color: #ABC;",
+    "    border: 2px dashed #fff;",
+    "}"
+]
+
+pattern = r'#[a-zA-Z0-9]{3,6}[;|\)|,]'
+
+for lines in inputs:
+    for word in lines.split():
+        start = word.index("#")
+        end = [";",")",","]
+        x = re.search(pattern, word)
+        if x:
+            for c in end:
+            print(word[start:end])
