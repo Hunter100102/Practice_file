@@ -514,14 +514,14 @@ inputs = [
 
 pattern = r'#[a-zA-Z0-9]{3,6}[;|\)|,]'
 
-#Do a verification before this
-
 for line in inputs:
-    for word in line.split():
-        for letter in word:
-            if letter == '#':
-                start = word.index(letter)
-                if letter == ',' or ')' or ';':
-                    end = word.index(letter)-1
-                    #print(start, end)
-                    print(word[start:end])
+    x = re.search(pattern, line)
+    if x:
+        for word in line.split():
+            for letter in word:
+                if letter == '#':
+                    start = word.index(letter)
+                    if letter == ',' or ')' or ';':
+                        end = word.index(letter)-1
+                        #print(start, end)
+                        print(word[start:end])
