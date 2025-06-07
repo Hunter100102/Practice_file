@@ -495,33 +495,43 @@
 #    check(inputs, n)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #You are given 0-50 lines of css code and you need to print out the colors with the "#" symbol in the order they are given. 
-#hookahbar.infinityfreeapp.com/void_alert_test.php
-import re
-n = 11
-inputs = [
-    "#BED",
-    "{",
-    "    color: #FfFdF8; background-color:#aef;",
-    "    font-size: 123px;",
-    "    background: -webkit-linear-gradient(top, #f9f9f9, #fff);",
-    "}",
-    "#Cab",
-    "{",
-    "    background-color: #ABC;",
-    "    border: 2px dashed #fff;",
-    "}"
-]
+#https://www.hackerrank.com/challenges/hex-color-code/problem?isFullScreen=true
+#import re
+#n = 5
+#lines = [
+    #"#.shadow {",
+#    "{",
+#    "       -moz-box-shadow:    inset 0 0 10px #000000;",
+#    "       -webkit-box-shadow: inset 0 0 10px #000000;",
+#    "       box-shadow:         inset 0 0 10px #0z00G0;",
+#    "}"
+#]
 
-pattern = r'#[a-zA-Z0-9]{3,6}[;|\)|,]'
+#pattern = r'#[a-zA-Z0-9]{3,6}[;|\)|,]'
 
-for line in inputs:
-    x = re.search(pattern, line)
-    if x:
-        for word in line.split():
-            for letter in word:
-                if letter == '#':
-                    start = word.index(letter)
-                    if letter == ',' or ')' or ';':
-                        end = word.index(letter)-1
-                        #print(start, end)
-                        print(word[start:end])
+#for line in lines:
+#    matches = re.findall(pattern, line)
+#    for match in matches:
+#        print(match[:len(match)-1])
+# ----------------------------------------------------------------------------------------------------------------------------------
+# https://www.hackerrank.com/challenges/html-parser-part-1/problem?isFullScreen=true
+# HTML Parser - Part 1
+# Goal: Parse a given HTML snippet and print out start tags, end tags, and empty tags along with their attributes and values.
+# Note: Do NOT process anything inside comments.
+# Sample input:
+# <html><head><title>HTML Parser - I</title></head>
+# <body data-modal-target class='1'><h1>HackerRank</h1><br /></body></html>
+# Sample output:
+# Start : html
+# Start : head
+# Start : title
+# End   : title
+# End   : head
+# Start : body
+# -> data-modal-target > None
+# -> class > 1
+# Start : h1
+# End   : h1
+# Empty : br
+# End   : body
+# End   : html
