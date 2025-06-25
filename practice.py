@@ -553,4 +553,4 @@ class MyHTMLParser(HTMLParser):
         print("Encountered some data  :", data)
 
 parser = MyHTMLParser()
-parser.feed('<html><head><title></title></head>''<body><h1></h1></body></html>')
+parser.feed(input_lines)
