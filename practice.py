@@ -545,6 +545,8 @@ input_lines = """<html><head><title>HTML Parser - I</title></head><body data-mod
 class MyHTMLParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         print("Start :", tag)
+        for attr in attrs:
+            print("->", attr[0], ">", attr[1])
 
     def handle_endtag(self, tag):
         print("End :", tag)
