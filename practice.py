@@ -551,8 +551,8 @@ class MyHTMLParser(HTMLParser):
     def handle_endtag(self, tag):
         print("End :", tag)
 
-    def handle_data(self, data):
-        print("Encountered some data  :", data)
+    #def handle_data(self, data):
+        #print("Encountered some data  :", data)
 
 parser = MyHTMLParser()
 parser.feed(input_lines)
