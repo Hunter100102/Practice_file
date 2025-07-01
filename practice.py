@@ -566,3 +566,22 @@
 #parser = MyHTMLParser()
 #parser.feed(input_lines)
 #-------------------------------------------------------------------------------------------------------------------------------------------
+#Hackerrank practice https://www.hackerrank.com/challenges/html-parser-part-2/problem?isFullScreen=true
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#This will be a random test I want to build a script that will go through a txt file and count how many times each word appears. 
+#Then print the top five most common words and their counts and for a bonus ignore punctuation
+my_dict = {}
+with open('example.txt','r') as file:
+    for line in file:
+        for word in line:
+            word = word.strip()
+            if word not in my_dict:
+                my_dict[word] = 1
+            else: 
+                my_dict[word] += 1
+    
+    sorted_dict = sorted(my_dict.items(), key=lambda item:item[1], reverse=True)
+    for key,value in sorted_dict:
+        print(f"{key}: {value}")
