@@ -572,16 +572,24 @@
 #--------------------------------------------------------------------------------------------------------------------------------------------
 #This will be a random test I want to build a script that will go through a txt file and count how many times each word appears. 
 #Then print the top five most common words and their counts and for a bonus ignore punctuation
+import re
+
 my_dict = {}
+pattern = r"[a-zA-Z]"
 with open('example.txt','r') as file:
     for line in file:
-        for word in line:
-            word = word.strip()
-            if word not in my_dict:
-                my_dict[word] = 1
-            else: 
-                my_dict[word] += 1
+        for word in line.split():
+            entry = ""
+            for letter in word:
+                x = re.search(pattern, letter)
+                if x:
+                    entry = entry + letter
+                if entry not in my_dict:
+                    my_dict[word] = 1
+                else:
+                    my_dict[word] += 1
     
     sorted_dict = sorted(my_dict.items(), key=lambda item:item[1], reverse=True)
-    for key,value in sorted_dict:
+    first_five = list(my_dict.items())[0:5]
+    for key,value in first_five:
         print(f"{key}: {value}")
