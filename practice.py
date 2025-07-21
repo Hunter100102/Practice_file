@@ -567,6 +567,24 @@
 #parser.feed(input_lines)
 #-------------------------------------------------------------------------------------------------------------------------------------------
 #Hackerrank practice https://www.hackerrank.com/challenges/html-parser-part-2/problem?isFullScreen=true
+#Given N lines print the single line and multi-line comments as well as the data
+# Sample Input:
+# 4
+# <!--[if IE 9]>IE9-specific content
+# <![endif]-->
+# <div> Welcome to HackerRank</div>
+# <!--[if IE 9]>IE9-specific content<![endif]-->
+
+#Sample Output:
+# >>> Multi-line Comment
+# [if IE 9]>IE9-specific content
+# <![endif]
+# >>> Data
+#  Welcome to HackerRank
+# >>> Single-line Comment
+# [if IE 9]>IE9-specific content<![endif]
+
+#Start Code here:
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------
