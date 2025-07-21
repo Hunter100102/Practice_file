@@ -585,6 +585,21 @@
 # [if IE 9]>IE9-specific content<![endif]
 
 #Start Code here:
+from html.parser import HTMLParserr
+
+i = 4
+lines = ['<!--[if IE 9]>IE9-specific content', '<![endif]-->', '<div> Welcome to HackerRank</div>', '<!--[if IE 9]>IE9-specific content<![endif]-->']
+
+def comment_sorting(n, entered):
+    for _ in range(n):
+
+class MyHTMLParser(HTMLParser):
+    def handle_comment(self, data):
+          print("Comment  :", data)       
+
+class MyHTMLParser(HTMLParser):
+    def handle_data(self, data):
+        print("Data     :", data)           
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------
