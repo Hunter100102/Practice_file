@@ -585,6 +585,27 @@
 # [if IE 9]>IE9-specific content<![endif]
 
 #Start Code here:
+from html.parser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+html = ""       
+for i in range(int(input())):
+    html += input().rstrip()
+    html += '\n'
+    
+parser = MyHTMLParser()
+parser.feed(html)
+parser.close()
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------
