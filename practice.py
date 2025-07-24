@@ -584,22 +584,54 @@
 # >>> Single-line Comment
 # [if IE 9]>IE9-specific content<![endif]
 
-#Start Code here:
-from html.parser import HTMLParserr
-
-i = 4
-lines = ['<!--[if IE 9]>IE9-specific content', '<![endif]-->', '<div> Welcome to HackerRank</div>', '<!--[if IE 9]>IE9-specific content<![endif]-->']
-
-def comment_sorting(n, entered):
-    for _ in range(n):
+#Start Code here
+from html.parser import HTMLParser
 
 class MyHTMLParser(HTMLParser):
     def handle_comment(self, data):
-          print("Comment  :", data)       
-
-class MyHTMLParser(HTMLParser):
+        print("Comment: ", data)
+    
     def handle_data(self, data):
-        print("Data     :", data)           
+        print("Data :", data)
+  
+  
+i = 4
+lines = ["<!--[if IE 9]>IE9-specific content"
+'<![endif]-->',
+'<div> Welcome to HackerRank</div>',
+'<!--[if IE 9]>IE9-specific content<![endif]-->']
+
+  
+html = ""       
+for i in range(int(input())):
+    html += lines.rstrip()
+    html += '\n'
+    
+parser = MyHTMLParser()
+parser.feed(html)
+parser.close()
+    
+
+#class MyHTMLParser(HTMLParser):
+#    def handle_starttag(self, tag, attrs):
+#        print("Start :", tag)
+#        for attr in attrs:
+#            name = attr[0]
+#            value = attr[1] if attr[1] is not None else "None"
+#            print(f"->{name} > {value}")
+
+#    def handle_endtag(self, tag):
+#        print("End :", tag)
+
+#    def handle_startendtag(self, tag, attrs):
+#        print("Empty :", tag)
+#        for attr in attrs:
+#            name - attr[0]
+#            value = attr[1] if attr[1] is not None else "None"
+#            print(f"-> {name} > {value}")
+
+#    def handle_data(self, data):
+#        print("Encountered some data  :", data)
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------
