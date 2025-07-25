@@ -589,10 +589,12 @@ from html.parser import HTMLParser
 
 class MyHTMLParser(HTMLParser):
     def handle_comment(self, data):
-        print("Comment: ", data)
+        print(">>> Multi-line Comment")
+        print(data)
     
     def handle_data(self, data):
-        print("Data :", data)
+        print(">>> Data")
+        print(data)
   
   
 i = 4
@@ -601,13 +603,20 @@ lines = ["<!--[if IE 9]>IE9-specific content"
 '<div> Welcome to HackerRank</div>',
 '<!--[if IE 9]>IE9-specific content<![endif]-->']
 
-  
-for count in range(0,i-1):
-    line = lines[count] 
-    parser = MyHTMLParser()
-    parser.feed(line)
-    parser.close()
-    
+
+html = ""       
+for i in range(int(input())):
+    html += input().rstrip()
+    html += '\n'
+
+#for count in range(0,i-1):
+#    line = lines[count] 
+#    parser = MyHTMLParser()
+#    parser.feed(line)
+#    parser.close()
+parser = MyHTMLParser()
+parser.feed(html)
+parser.close()    
 
 #class MyHTMLParser(HTMLParser):
 #    def handle_starttag(self, tag, attrs):
