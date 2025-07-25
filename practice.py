@@ -602,14 +602,11 @@ lines = ["<!--[if IE 9]>IE9-specific content"
 '<!--[if IE 9]>IE9-specific content<![endif]-->']
 
   
-html = ""       
-for i in range(int(input())):
-    html += lines.rstrip()
-    html += '\n'
-    
-parser = MyHTMLParser()
-parser.feed(html)
-parser.close()
+for count in range(0,i-1):
+    line = lines[count] 
+    parser = MyHTMLParser()
+    parser.feed(line)
+    parser.close()
     
 
 #class MyHTMLParser(HTMLParser):
