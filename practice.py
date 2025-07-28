@@ -666,12 +666,23 @@
         #print(f"{key}: {value}")
 #------------------------------------------------------------------------------------------------------------------------------------------
 #Given this input Input: "aabcccccaaa" make it output this Output: "a2b1c5a3"
-entered = "aabcccccaaa"
+#entered = "aabcccccaaa"
+#entered = entered + "_"
 
-cap = []
-count = 0
-for letter in entered:
-    if letter not in cap:
-        cap.append(letter)
-        count += 1
-        
+#hold = []
+#count = 0
+#n = len(entered)-1
+
+#for i in range(n):
+    #letter = entered[i]
+
+    #if i < n:
+        #count += 1
+        #if letter != entered[i+1]:
+            #hold.append(letter)
+            #hold.append(count)
+            #count = 0
+
+#print(hold)
+#----------------------------------------------------------------------------------------------------------------------------------------------
+#Set up the next challenge
