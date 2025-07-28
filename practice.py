@@ -585,38 +585,38 @@
 # [if IE 9]>IE9-specific content<![endif]
 
 #Start Code here
-from html.parser import HTMLParser
+#from html.parser import HTMLParser
 
-class MyHTMLParser(HTMLParser):
-    def handle_comment(self, data):
-        print(">>> Multi-line Comment")
-        print(data)
+#class MyHTMLParser(HTMLParser):
+#    def handle_comment(self, data):
+#        print(">>> Multi-line Comment")
+#        print(data)
     
-    def handle_data(self, data):
-        print(">>> Data")
-        print(data)
+#    def handle_data(self, data):
+#        print(">>> Data")
+#        print(data)
   
   
-i = 4
-lines = ["<!--[if IE 9]>IE9-specific content"
-'<![endif]-->',
-'<div> Welcome to HackerRank</div>',
-'<!--[if IE 9]>IE9-specific content<![endif]-->']
+#i = 4
+#lines = ["<!--[if IE 9]>IE9-specific content"
+#'<![endif]-->',
+#'<div> Welcome to HackerRank</div>',
+#'<!--[if IE 9]>IE9-specific content<![endif]-->']
 
 
-html = ""       
-for i in range(int(input())):
-    html += input().rstrip()
-    html += '\n'
+#html = ""       
+#for i in range(int(input())):
+#    html += input().rstrip()
+#    html += '\n'
 
 #for count in range(0,i-1):
 #    line = lines[count] 
 #    parser = MyHTMLParser()
 #    parser.feed(line)
 #    parser.close()
-parser = MyHTMLParser()
-parser.feed(html)
-parser.close()    
+#parser = MyHTMLParser()
+#parser.feed(html)
+#parser.close()    
 
 #class MyHTMLParser(HTMLParser):
 #    def handle_starttag(self, tag, attrs):
@@ -664,3 +664,14 @@ parser.close()
     #first_five = list(my_dict.items())[0:5]
     #for key,value in first_five:
         #print(f"{key}: {value}")
+#------------------------------------------------------------------------------------------------------------------------------------------
+#Given this input Input: "aabcccccaaa" make it output this Output: "a2b1c5a3"
+entered = "aabcccccaaa"
+
+cap = []
+count = 0
+for letter in entered:
+    if letter not in cap:
+        cap.append(letter)
+        count += 1
+        
