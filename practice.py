@@ -686,3 +686,19 @@
 #print(hold)
 #----------------------------------------------------------------------------------------------------------------------------------------------
 #Set up the next challenge
+# Input: nums = [2,7,11,15], target = 9 and output: [0,1]
+# Given an array of integer nums and an inter target, retrn the indicies of the two numbers such that they add up to the target. 
+#nums = [2,7,11,15]
+#target = 13
+
+
+#for first in nums:
+#    for second in nums:
+#        if first + second == target:
+#            UNO = nums.index(first)
+#            LAST = nums.index(second)
+#            print(f'[{UNO}, {LAST}]')
+#            exit()
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Input: "abcabcbb" Output: 3 #"abc"
+# Given a string s, find the length of the longest substring without repeating characters
