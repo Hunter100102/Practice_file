@@ -702,3 +702,16 @@
 #------------------------------------------------------------------------------------------------------------------------------------------
 # Input: "abcabcbb" Output: 3 #"abc"
 # Given a string s, find the length of the longest substring without repeating characters
+import re
+text = "abcabcbb"
+pattern = r"\w+"
+
+matches = re.findall(pattern, text, re.IGNORECASE)
+longest = 0
+
+for match in matches:
+    if len(match) > longest:
+        longest = len(match)
+
+print(longest)
+
