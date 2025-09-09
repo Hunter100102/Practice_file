@@ -703,15 +703,30 @@
 # Input: "abcabcbb" Output: 3 #"abc"
 # Given a string s, find the length of the longest substring without repeating characters
 import re
-text = "abcabcbb"
-pattern = r"(\w)(?!\s*\b|\b)"
+text = [
+    "abcabcbb",     # repeated pattern
+    "bbbbb",        # all same letter
+    "pwwkew",       # repeats but with breaks
+    "abcdefg",      # all unique
+    "dvdf",         # repeat after break
+    "abba",         # palindrome-like with repeats
+    "tmmzuxt",      # repeats mid-string
+    "",             # empty string
+    "a",            # single char
+    "aaabbbccc"     # grouped repeats
+]
 
-matches = re.findall(pattern, text, re.IGNORECASE)
-longest = 0
-
-for match in matches:
-    if len(match) > longest:
-        longest = len(match)
-
-print(longest)
+sub = []
+count = 0
+for words in text:
+    for letter in words:
+        if letter not in sub:
+            sub.append(letter)
+            count += 1
+        elif letter not in sub and sub + letter in text:
+            count += 1
+        else:
+            print(count)
+            quit()
+        
 
