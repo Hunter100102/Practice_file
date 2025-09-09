@@ -704,7 +704,7 @@
 # Given a string s, find the length of the longest substring without repeating characters
 import re
 text = "abcabcbb"
-pattern = r"\w+"
+pattern = r"(\w)(?!\s*\b|\b)"
 
 matches = re.findall(pattern, text, re.IGNORECASE)
 longest = 0
