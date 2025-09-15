@@ -702,28 +702,41 @@
 #------------------------------------------------------------------------------------------------------------------------------------------
 # Input: "abcabcbb" Output: 3 #"abc"
 # Given a string s, find the length of the longest substring without repeating characters
-import re
-text = [
-    "abcabcbb",     # repeated pattern
-    "bbbbb",        # all same letter
-    "pwwkew",       # repeats but with breaks
-    "abcdefg",      # all unique
-    "dvdf",         # repeat after break
-    "abba",         # palindrome-like with repeats
-    "tmmzuxt",      # repeats mid-string
-    "",             # empty string
-    "a",            # single char
-    "aaabbbccc"     # grouped repeats
-]
+# import re
+# text = [
+#     "abcabcbb",     # repeated pattern
+#     "bbbbb",        # all same letter
+#     "pwwkew",       # repeats but with breaks
+#     "abcdefg",      # all unique
+#     "dvdf",         # repeat after break
+#     "abba",         # palindrome-like with repeats
+#    "tmmzuxt",      # repeats mid-string
+#     "",             # empty string
+#     "a",            # single char
+#     "aaabbbccc"     # grouped repeats
+# ]
 
-for words in text:
-    sub = []
-    count = 0
-    for letter in words:
-        if letter not in sub:
-            sub.append(letter)
-            count += 1
-    print(count)
-
+# for words in text:
+#     sub = []
+#     count = 0
+#     for letter in words:
+#         if letter not in sub:
+#             sub.append(letter)
+#             count += 1
+#     print(count)
+#------------------------------------------------------------------------------------------------------------------------------------------- 
+#The goal of this practice will be to find the follow up score. Example n = 5, grades = [2,3,6,6,5] and output will be 5
+# def runner_up(num, grades):
+#    hold = []
+#     for grade in grades:
+#         if grade not in hold:
+#             hold.append(grade)
+#     hold.sort(reverse=True)
+#     print(hold[1])
         
 
+# if __name__ == '__main__':
+#     n = 5
+#     arr = [2,3,6,6,5]
+#     runner_up(n, arr)
+#-----------------------------------------------------------------------------------------------------------------------------------------
