@@ -716,17 +716,14 @@ text = [
     "aaabbbccc"     # grouped repeats
 ]
 
-sub = []
-count = 0
 for words in text:
+    sub = []
+    count = 0
     for letter in words:
         if letter not in sub:
             sub.append(letter)
             count += 1
-        elif letter not in sub and sub + letter in text:
-            count += 1
-        else:
-            print(count)
-            quit()
+    print(count)
+
         
 
