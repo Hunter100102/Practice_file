@@ -740,6 +740,14 @@
 #     arr = [2,3,6,6,5]
 #     runner_up(n, arr)
 #-----------------------------------------------------------------------------------------------------------------------------------------
+# https://www.hackerrank.com/challenges/class-1-dealing-with-complex-numbers/problem?isFullScreen=true
+# Desired output: 7.00+7.00i
+# -3.00-5.00i
+# 4.00+17.00i
+# 0.26-0.11i
+# 2.24+0.00i
+# 7.81+0.00i
+
 import math
 
 class Complex(object):
