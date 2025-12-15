@@ -752,16 +752,32 @@ import math
 
 class Complex(object):
     def __init__(self, real, imaginary):
+        self.real = real
+        self.imaginary = imaginary
         
     def __add__(self, no):
+        real_sum = self.real + no.real
+        imaginary_sum = self.imaginary + no.imaginary
+        return Complex(real_sum, imaginary_sum)
         
     def __sub__(self, no):
+        real_sub = self.real - no.real
+        imaginary_sub = self.imaginary - no.imaginary
+        return Complex(real_sub, imaginary_sub)
         
     def __mul__(self, no):
-
+        real_mul = self.real * no.real
+        imaginary_mul = self.imaginary * no.imaginary
+        return Complex(real_mul, imaginary_mul)
+    
     def __truediv__(self, no):
+        real_div = self.real / no.real
+        imaginary_div = self.imaginary / no.imaginary
+        return Complex(real_div, imaginary_div)
 
     def mod(self):
+        result = math.sqrt(self.real*self.real+self.no*self.no)
+        return(result)
 
     def __str__(self):
         if self.imaginary == 0:
@@ -788,5 +804,5 @@ if __name__ == '__main__':
     print(x - y)
     print(x * y)
     print(x / y)
-    print(x.mod())
-    print(y.mod())
+    #print(x.mod())
+    #print(y.mod())
