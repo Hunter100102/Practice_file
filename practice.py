@@ -748,75 +748,78 @@
 # 2.24+0.00i
 # 7.81+0.00i
 #---------
-# import math #---------
+# import math 
 #--------- 
-# class Complex(object): #---------
-#     def __init__(self, real, imaginary): #---------
-#         self.real = real #---------
-#         self.imaginary = imaginary #---------
+# class Complex(object): 
+#     def __init__(self, real, imaginary): 
+#         self.real = real 
+#         self.imaginary = imaginary 
 #---------         
-#     def __add__(self, no): #---------
-#         real_sum = self.real + no.real #---------
-#         imaginary_sum = self.imaginary + no.imaginary #---------
-#         return Complex(real_sum, imaginary_sum) #---------
+#     def __add__(self, no): 
+#         real_sum = self.real + no.real 
+#         imaginary_sum = self.imaginary + no.imaginary 
+#         return Complex(real_sum, imaginary_sum) 
 #---------         
-#     def __sub__(self, no): #---------
-#         real_sub = self.real - no.real #---------
-#         imaginary_sub = self.imaginary - no.imaginary #---------
-#         return Complex(real_sub, imaginary_sub) #---------
+#     def __sub__(self, no): 
+#         real_sub = self.real - no.real 
+#         imaginary_sub = self.imaginary - no.imaginary 
+#         return Complex(real_sub, imaginary_sub) 
 #---------         
-#     def __mul__(self, no): #---------
-#         a, b = self.real, self.imaginary #---------
-#         c, d = no.real, no.imaginary #---------
-#         return Complex(a*c - b*d, a*d + b*c) #---------
+#     def __mul__(self, no): 
+#         a, b = self.real, self.imaginary 
+#         c, d = no.real, no.imaginary 
+#         return Complex(a*c - b*d, a*d + b*c) 
 #---------
-#     def __truediv__(self, no): #---------
-#         a, b = self.real, self.imaginary #---------
-#         c, d = no.real, no.imaginary #---------
-#         denom = c*c + d*d #---------
-#         return Complex((a*c + b*d) / denom, (b*c - a*d) / denom) #---------
+#     def __truediv__(self, no): 
+#         a, b = self.real, self.imaginary 
+#         c, d = no.real, no.imaginary 
+#         denom = c*c + d*d 
+#         return Complex((a*c + b*d) / denom, (b*c - a*d) / denom) 
 #---------
-#     def mod(self): #---------
-#         return Complex(math.sqrt(self.real**2 + self.imaginary**2), 0) #---------
+#     def mod(self): 
+#         return Complex(math.sqrt(self.real**2 + self.imaginary**2), 0) 
 #---------
-#     def __str__(self): #---------
-#         if self.imaginary == 0: #---------
-#             result = "%.2f+0.00i" % (self.real) #---------
-#         elif self.real == 0: #---------
-#             if self.imaginary >= 0: #---------
-#                 result = "0.00+%.2fi" % (self.imaginary) #---------
-#             else: #---------
-#                 result = "0.00-%.2fi" % (abs(self.imaginary)) #---------
-#         elif self.imaginary > 0: #---------
-#             result = "%.2f+%.2fi" % (self.real, self.imaginary) #---------
-#         else: #---------
-#             result = "%.2f-%.2fi" % (self.real, abs(self.imaginary)) #---------
-#         return result #---------
-#---------
-# if __name__ == '__main__': #---------
-#     # Hard-coded sample input #---------
-#     C = [2.0, 1.0] #---------
-#     D = [5.0, 6.0] #---------
-#     x = Complex(*C) #---------
-#     y = Complex(*D) #---------
-#     print(x + y) #---------
-#     print(x - y) #---------
-#     print(x * y) #---------
-#     print(x / y) #---------
-#     print(x.mod()) #---------
-#     print(y.mod()) #---------
+#     def __str__(self): 
+#         if self.imaginary == 0: 
+#             result = "%.2f+0.00i" % (self.real) 
+#         elif self.real == 0: 
+#             if self.imaginary >= 0: 
+#                 result = "0.00+%.2fi" % (self.imaginary) 
+#             else: 
+#                 result = "0.00-%.2fi" % (abs(self.imaginary)) 
+#         elif self.imaginary > 0: 
+#             result = "%.2f+%.2fi" % (self.real, self.imaginary) 
+#         else: 
+#             result = "%.2f-%.2fi" % (self.real, abs(self.imaginary)) 
+#         return result 
+
+# if __name__ == '__main__': 
+#     # Hard-coded sample input 
+#     C = [2.0, 1.0] 
+#     D = [5.0, 6.0] 
+#     x = Complex(*C) 
+#     y = Complex(*D) 
+#     print(x + y) 
+#     print(x - y) 
+#     print(x * y) 
+#     print(x / y) 
+#     print(x.mod()) 
+#     print(y.mod()) 
 #-----------------------------------------------------------------------------------------------------------------------------------------
 # https://www.hackerrank.com/challenges/class-2-find-the-torsional-angle/problem?isFullScreen=true
 # Goal: print torsional angle (degrees) correct to 2 decimals
 # (Do not solve here yet — just setup)
-#---------
+
 
 import math
 
 class Points(object):
     def __init__(self, x, y, z):
         # store x, y, z as floats
-        pass
+        self.x = float(x)
+        self.y = float(y)
+        self.z = float(z)
+        
 
     def __sub__(self, no):
         # return vector from no to self (component-wise subtraction) as a Points
@@ -836,74 +839,25 @@ class Points(object):
 
 
 if __name__ == '__main__':
-    # Read 4 points from stdin (each line: x y z)
-    # p1 = Points(...)
-    # p2 = Points(...)
-    # p3 = Points(...)
-    # p4 = Points(...)
-    #
-    # Build vectors:
-    #   a = p2 - p1
-    #   b = p3 - p2
-    #   c = p4 - p3
-    #
-    # Compute normals:
-    #   x = a.cross(b)
-    #   y = b.cross(c)
-    #
-    # Use formula from problem:
-    #   angle = acos( x.dot(y) / (|x||y|) )
-    # then convert to degrees and print to 2 decimals
-    #
-    # NOTE: leave unimplemented until you solve.
-    pass
-
-#-----------------------------------------------------------------------------------------------------------------------------------------
-# Custom Practice — Vector2D Geometry
-# Goal: practice classes, operators, dot product, magnitude, and angles
-# Expected output format: two decimals
-#---------
-
-import math
-
-class Vector2D(object):
-    def __init__(self, x, y):
-        # store x and y
-        pass
-
-    def __add__(self, other):
-        # vector addition
-        pass
-
-    def __sub__(self, other):
-        # vector subtraction
-        pass
-
-    def dot(self, other):
-        # dot product
-        pass
-
-    def magnitude(self):
-        # vector length
-        pass
-
-    def angle_with(self, other):
-        # angle between vectors in degrees
-        pass
-
-    def __str__(self):
-        # format: "x.xx, y.yy"
-        pass
+    p1 = Points(0, 4, 5)
+    p2 = Points(1, 7, 6)
+    p3 = Points(0, 5, 9)
+    p4 = Points(1, 7, 2)
 
 
-if __name__ == "__main__":
-    v1 = Vector2D(3, 4)
-    v2 = Vector2D(1, 2)
+    a = p2 - p1  
+    b = p3 - p2  
+    c = p4 - p3  
 
-    print(v1 + v2)
-    print(v1 - v2)
-    print(f"{v1.dot(v2):.2f}")
-    print(f"{v1.magnitude():.2f}")
-    print(f"{v1.angle_with(v2):.2f}")
+    x = a.cross(b)  
+    y = b.cross(c)  
 
-#-----------------------------------------------------------------------------------------------------------------------------------------
+    denom = x.absolute() * y.absolute()  
+    cos_theta = x.dot(y) / denom  
+
+    # Clamp for numeric stability (avoid acos domain errors)  
+    cos_theta = max(-1.0, min(1.0, cos_theta))  
+
+    angle = math.degrees(math.acos(cos_theta))  
+    print(f"{angle:.2f}")
+
