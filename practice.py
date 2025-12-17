@@ -859,3 +859,51 @@ if __name__ == '__main__':
     pass
 
 #-----------------------------------------------------------------------------------------------------------------------------------------
+# Custom Practice — Vector2D Geometry
+# Goal: practice classes, operators, dot product, magnitude, and angles
+# Expected output format: two decimals
+#---------
+
+import math
+
+class Vector2D(object):
+    def __init__(self, x, y):
+        # store x and y
+        pass
+
+    def __add__(self, other):
+        # vector addition
+        pass
+
+    def __sub__(self, other):
+        # vector subtraction
+        pass
+
+    def dot(self, other):
+        # dot product
+        pass
+
+    def magnitude(self):
+        # vector length
+        pass
+
+    def angle_with(self, other):
+        # angle between vectors in degrees
+        pass
+
+    def __str__(self):
+        # format: "x.xx, y.yy"
+        pass
+
+
+if __name__ == "__main__":
+    v1 = Vector2D(3, 4)
+    v2 = Vector2D(1, 2)
+
+    print(v1 + v2)
+    print(v1 - v2)
+    print(f"{v1.dot(v2):.2f}")
+    print(f"{v1.magnitude():.2f}")
+    print(f"{v1.angle_with(v2):.2f}")
+
+#-----------------------------------------------------------------------------------------------------------------------------------------
