@@ -747,62 +747,115 @@
 # 0.26-0.11i
 # 2.24+0.00i
 # 7.81+0.00i
+#---------
+# import math #---------
+#--------- 
+# class Complex(object): #---------
+#     def __init__(self, real, imaginary): #---------
+#         self.real = real #---------
+#         self.imaginary = imaginary #---------
+#---------         
+#     def __add__(self, no): #---------
+#         real_sum = self.real + no.real #---------
+#         imaginary_sum = self.imaginary + no.imaginary #---------
+#         return Complex(real_sum, imaginary_sum) #---------
+#---------         
+#     def __sub__(self, no): #---------
+#         real_sub = self.real - no.real #---------
+#         imaginary_sub = self.imaginary - no.imaginary #---------
+#         return Complex(real_sub, imaginary_sub) #---------
+#---------         
+#     def __mul__(self, no): #---------
+#         a, b = self.real, self.imaginary #---------
+#         c, d = no.real, no.imaginary #---------
+#         return Complex(a*c - b*d, a*d + b*c) #---------
+#---------
+#     def __truediv__(self, no): #---------
+#         a, b = self.real, self.imaginary #---------
+#         c, d = no.real, no.imaginary #---------
+#         denom = c*c + d*d #---------
+#         return Complex((a*c + b*d) / denom, (b*c - a*d) / denom) #---------
+#---------
+#     def mod(self): #---------
+#         return Complex(math.sqrt(self.real**2 + self.imaginary**2), 0) #---------
+#---------
+#     def __str__(self): #---------
+#         if self.imaginary == 0: #---------
+#             result = "%.2f+0.00i" % (self.real) #---------
+#         elif self.real == 0: #---------
+#             if self.imaginary >= 0: #---------
+#                 result = "0.00+%.2fi" % (self.imaginary) #---------
+#             else: #---------
+#                 result = "0.00-%.2fi" % (abs(self.imaginary)) #---------
+#         elif self.imaginary > 0: #---------
+#             result = "%.2f+%.2fi" % (self.real, self.imaginary) #---------
+#         else: #---------
+#             result = "%.2f-%.2fi" % (self.real, abs(self.imaginary)) #---------
+#         return result #---------
+#---------
+# if __name__ == '__main__': #---------
+#     # Hard-coded sample input #---------
+#     C = [2.0, 1.0] #---------
+#     D = [5.0, 6.0] #---------
+#     x = Complex(*C) #---------
+#     y = Complex(*D) #---------
+#     print(x + y) #---------
+#     print(x - y) #---------
+#     print(x * y) #---------
+#     print(x / y) #---------
+#     print(x.mod()) #---------
+#     print(y.mod()) #---------
+#-----------------------------------------------------------------------------------------------------------------------------------------
+# https://www.hackerrank.com/challenges/class-2-find-the-torsional-angle/problem?isFullScreen=true
+# Goal: print torsional angle (degrees) correct to 2 decimals
+# (Do not solve here yet — just setup)
+#---------
 
 import math
 
-class Complex(object):
-    def __init__(self, real, imaginary):
-        self.real = real
-        self.imaginary = imaginary
-        
-    def __add__(self, no):
-        real_sum = self.real + no.real
-        imaginary_sum = self.imaginary + no.imaginary
-        return Complex(real_sum, imaginary_sum)
-        
+class Points(object):
+    def __init__(self, x, y, z):
+        # store x, y, z as floats
+        pass
+
     def __sub__(self, no):
-        real_sub = self.real - no.real
-        imaginary_sub = self.imaginary - no.imaginary
-        return Complex(real_sub, imaginary_sub)
-        
-    def __mul__(self, no):
-        real_mul = self.real * no.real
-        imaginary_mul = self.imaginary * no.imaginary
-        return Complex(real_mul, imaginary_mul)
-    
-    def __truediv__(self, no):
-        real_div = self.real / no.real
-        imaginary_div = self.imaginary / no.imaginary
-        return Complex(real_div, imaginary_div)
+        # return vector from no to self (component-wise subtraction) as a Points
+        pass
 
-    def mod(self):
-        result = math.sqrt(self.real*self.real+self.no*self.no)
-        return(result)
+    def dot(self, no):
+        # return dot product (float)
+        pass
 
-    def __str__(self):
-        if self.imaginary == 0:
-            result = "%.2f+0.00i" % (self.real)
-        elif self.real == 0:
-            if self.imaginary >= 0:
-                result = "0.00+%.2fi" % (self.imaginary)
-            else:
-                result = "0.00-%.2fi" % (abs(self.imaginary))
-        elif self.imaginary > 0:
-            result = "%.2f+%.2fi" % (self.real, self.imaginary)
-        else:
-            result = "%.2f-%.2fi" % (self.real, abs(self.imaginary))
-        return result
+    def cross(self, no):
+        # return cross product vector as a Points
+        pass
+
+    def absolute(self):
+        # return magnitude/length of vector (float)
+        pass
 
 
 if __name__ == '__main__':
-    # Hard-coded sample input
-    C = [2.0, 1.0]
-    D = [5.0, 6.0]
-    x = Complex(*C)
-    y = Complex(*D)
-    print(x + y)
-    print(x - y)
-    print(x * y)
-    print(x / y)
-    #print(x.mod())
-    #print(y.mod())
+    # Read 4 points from stdin (each line: x y z)
+    # p1 = Points(...)
+    # p2 = Points(...)
+    # p3 = Points(...)
+    # p4 = Points(...)
+    #
+    # Build vectors:
+    #   a = p2 - p1
+    #   b = p3 - p2
+    #   c = p4 - p3
+    #
+    # Compute normals:
+    #   x = a.cross(b)
+    #   y = b.cross(c)
+    #
+    # Use formula from problem:
+    #   angle = acos( x.dot(y) / (|x||y|) )
+    # then convert to degrees and print to 2 decimals
+    #
+    # NOTE: leave unimplemented until you solve.
+    pass
+
+#-----------------------------------------------------------------------------------------------------------------------------------------
