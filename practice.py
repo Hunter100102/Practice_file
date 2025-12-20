@@ -823,11 +823,13 @@ class Points(object):
 
     def __sub__(self, no):
         # return vector from no to self (component-wise subtraction) as a Points
-        pass
+        # ie (x2−x1, y2−y1, z2−z1) = the formula for P1 in space pointing to P2
+        return Points(self.x - no.x, self.y - no.y, self.z - no.z)
 
     def dot(self, no):
         # return dot product (float)
-        pass
+        # A dot B = x1​x2​+y1​y2​+z1​z2​
+        adb = Points(self.x+no.x)
 
     def cross(self, no):
         # return cross product vector as a Points
