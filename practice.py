@@ -836,7 +836,7 @@ class Points(object):
         pass
 
     def absolute(self):
-        # return magnitude/length of vector (float)
+        # return magnitude/length of vector(float)
         pass
 
 
