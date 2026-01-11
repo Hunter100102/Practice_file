@@ -809,13 +809,13 @@
 # https://www.hackerrank.com/challenges/class-2-find-the-torsional-angle/problem?isFullScreen=true
 # Goal: print torsional angle (degrees) correct to 2 decimals
 # (Do not solve here yet — just setup)
-import math
+#import math
 
-class Points(object):
+#class Points(object):
     # This class is a BLUEPRINT.
     # Nothing runs until an object is created from it.
 
-    def __init__(self, x, y, z):
+#    def __init__(self, x, y, z):
         # This method runs AUTOMATICALLY when you create a Points object.
         #
         # Example call:
@@ -830,12 +830,12 @@ class Points(object):
         #   x, y, z -> 1, 2, 3
         #
         # These assignments store values INSIDE the object.
-        self.x = float(x)   # p.x now exists
-        self.y = float(y)   # p.y now exists
-        self.z = float(z)   # p.z now exists
+#        self.x = float(x)   # p.x now exists
+#        self.y = float(y)   # p.y now exists
+#        self.z = float(z)   # p.z now exists
 
 
-    def __sub__(self, no):
+#    def __sub__(self, no):
         # This method is called when you use the "-" operator.
         #
         # Example:
@@ -853,14 +853,14 @@ class Points(object):
         #
         # We CREATE A NEW Points object and RETURN IT.
         # Nothing modifies p1 or p2.
-        return Points(
-            self.x - no.x,   # new object's x
-            self.y - no.y,   # new object's y
-            self.z - no.z    # new object's z
-        )
+#        return Points(
+#            self.x - no.x,   # new object's x
+#            self.y - no.y,   # new object's y
+#            self.z - no.z    # new object's z
+#        )
 
 
-    def dot(self, no):
+#    def dot(self, no):
         # This method is called when you do:
         #   a.dot(b)
         #
@@ -875,10 +875,10 @@ class Points(object):
         # It does NOT create a new Points object.
         #
         # The returned value is sent back to the caller.
-        return (self.x * no.x + self.y * no.y + self.z * no.z)
+#        return (self.x * no.x + self.y * no.y + self.z * no.z)
 
 
-    def cross(self, no):
+#    def cross(self, no):
         # This method is called when you do:
         #   a.cross(b)
         #
@@ -895,10 +895,10 @@ class Points(object):
         #   c = a.cross(b)
         #
         # c is now a completely separate Points instance.
-        return Points(self.y * no.z - self.z * no.y, self.z * no.x - self.x * no.z, self.x * no.y - self.y * no.x)
+#        return Points(self.y * no.z - self.z * no.y, self.z * no.x - self.x * no.z, self.x * no.y - self.y * no.x)
 
 
-    def absolute(self):
+#    def absolute(self):
         # This method is called when you do:
         #   length = v.absolute()
         #
@@ -912,30 +912,81 @@ class Points(object):
         # It RETURNS A NUMBER.
         #
         # No new Points object is created.
-        return math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
+#        return math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
 
+
+
+#if __name__ == '__main__':
+#    p1 = Points(0, 4, 5)
+#    p2 = Points(1, 7, 6)
+#    p3 = Points(0, 5, 9)
+#    p4 = Points(1, 7, 2)
+
+
+#    a = p2 - p1  
+#    b = p3 - p2  
+#    c = p4 - p3  
+
+#    x = a.cross(b)  
+#    y = b.cross(c)  
+
+#    denom = x.absolute() * y.absolute()  
+#    cos_theta = x.dot(y) / denom  
+
+    # Clamp for numeric stability (avoid acos domain errors)  
+#    cos_theta = max(-1.0, min(1.0, cos_theta))  
+
+#    angle = math.degrees(math.acos(cos_theta))  
+#    print(f"{angle:.2f}")
+#-------------------------------------------------------------------------------------------------------------------------------------------
+#XML
+
+import xml.etree.ElementTree as etree
+
+# This will store the maximum depth found during recursion
+maxdepth = 0
+
+def depth(elem, level):
+    """
+    elem  -> current XML element (node) being processed
+    level -> current depth in the XML tree
+    """
+
+    global maxdepth
+
+    # TODO 1:
+    # Increase the current level to represent going one step deeper
+    # (hint: level should change here)
+
+    # TODO 2:
+    # Compare the updated level with maxdepth
+    # If the current level is greater, update maxdepth
+
+    # TODO 3:
+    # Loop through each child element of `elem`
+    # For each child, recursively call depth(child, current_level)
+
+    pass  # remove after implementing
 
 
 if __name__ == '__main__':
-    p1 = Points(0, 4, 5)
-    p2 = Points(1, 7, 6)
-    p3 = Points(0, 5, 9)
-    p4 = Points(1, 7, 2)
+    # Number of lines of XML input
+    n = int(input())
 
+    # Will hold the complete XML string
+    xml = ""
 
-    a = p2 - p1  
-    b = p3 - p2  
-    c = p4 - p3  
+    # Read XML input line by line
+    for i in range(n):
+        xml += input() + "\n"
 
-    x = a.cross(b)  
-    y = b.cross(c)  
+    # Parse XML into an ElementTree
+    tree = etree.ElementTree(etree.fromstring(xml))
 
-    denom = x.absolute() * y.absolute()  
-    cos_theta = x.dot(y) / denom  
+    # Start recursion at root
+    # Initial level is -1 so root becomes level 0
+    depth(tree.getroot(), -1)
 
-    # Clamp for numeric stability (avoid acos domain errors)  
-    cos_theta = max(-1.0, min(1.0, cos_theta))  
-
-    angle = math.degrees(math.acos(cos_theta))  
-    print(f"{angle:.2f}")
+    # Output the maximum depth found
+    print(maxdepth)
 
