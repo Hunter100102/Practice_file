@@ -809,35 +809,111 @@
 # https://www.hackerrank.com/challenges/class-2-find-the-torsional-angle/problem?isFullScreen=true
 # Goal: print torsional angle (degrees) correct to 2 decimals
 # (Do not solve here yet — just setup)
-
-
 import math
 
 class Points(object):
+    # This class is a BLUEPRINT.
+    # Nothing runs until an object is created from it.
+
     def __init__(self, x, y, z):
-        # store x, y, z as floats
-        self.x = float(x)
-        self.y = float(y)
-        self.z = float(z)
-        
+        # This method runs AUTOMATICALLY when you create a Points object.
+        #
+        # Example call:
+        #   p = Points(1, 2, 3)
+        #
+        # Python internally does:
+        #   p = Points.__new__(Points)
+        #   Points.__init__(p, 1, 2, 3)
+        #
+        # So:
+        #   self -> p   (the newly created object)
+        #   x, y, z -> 1, 2, 3
+        #
+        # These assignments store values INSIDE the object.
+        self.x = float(x)   # p.x now exists
+        self.y = float(y)   # p.y now exists
+        self.z = float(z)   # p.z now exists
+
 
     def __sub__(self, no):
-        # return vector from no to self (component-wise subtraction) as a Points
-        # ie (x2−x1, y2−y1, z2−z1) = the formula for P1 in space pointing to P2
-        return Points(self.x - no.x, self.y - no.y, self.z - no.z)
+        # This method is called when you use the "-" operator.
+        #
+        # Example:
+        #   v = p2 - p1
+        #
+        # Python converts that to:
+        #   v = Points.__sub__(p2, p1)
+        #
+        # So:
+        #   self -> p2
+        #   no   -> p1
+        #
+        # self.x means "p2.x"
+        # no.x   means "p1.x"
+        #
+        # We CREATE A NEW Points object and RETURN IT.
+        # Nothing modifies p1 or p2.
+        return Points(
+            self.x - no.x,   # new object's x
+            self.y - no.y,   # new object's y
+            self.z - no.z    # new object's z
+        )
+
 
     def dot(self, no):
-        # return dot product (float)
-        # A dot B = x1​x2​+y1​y2​+z1​z2​
-        adb = Points(self.x+no.x)
+        # This method is called when you do:
+        #   a.dot(b)
+        #
+        # Python converts that to:
+        #   Points.dot(a, b)
+        #
+        # So:
+        #   self -> a
+        #   no   -> b
+        #
+        # This method RETURNS A NUMBER (float).
+        # It does NOT create a new Points object.
+        #
+        # The returned value is sent back to the caller.
+        return (self.x * no.x + self.y * no.y + self.z * no.z)
+
 
     def cross(self, no):
-        # return cross product vector as a Points
-        pass
+        # This method is called when you do:
+        #   a.cross(b)
+        #
+        # Python converts that to:
+        #   Points.cross(a, b)
+        #
+        # So:
+        #   self -> a
+        #   no   -> b
+        #
+        # This method CREATES AND RETURNS A NEW Points object.
+        #
+        # That returned object can be stored in a variable:
+        #   c = a.cross(b)
+        #
+        # c is now a completely separate Points instance.
+        return Points(self.y * no.z - self.z * no.y, self.z * no.x - self.x * no.z, self.x * no.y - self.y * no.x)
+
 
     def absolute(self):
-        # return magnitude/length of vector(float)
-        pass
+        # This method is called when you do:
+        #   length = v.absolute()
+        #
+        # Python converts that to:
+        #   Points.absolute(v)
+        #
+        # So:
+        #   self -> v
+        #
+        # This method uses ONLY data stored INSIDE self.
+        # It RETURNS A NUMBER.
+        #
+        # No new Points object is created.
+        return math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
+
 
 
 if __name__ == '__main__':
