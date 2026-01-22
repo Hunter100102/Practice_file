@@ -938,55 +938,101 @@
 
 #    angle = math.degrees(math.acos(cos_theta))  
 #    print(f"{angle:.2f}")
-#-------------------------------------------------------------------------------------------------------------------------------------------
-#XML
+# =================================================================================================
+# ORIGINAL PRACTICE (COMMENTED OUT)
+# HackerRank: XML2 - Find the Maximum Depth
+# =================================================================================================
 
-import xml.etree.ElementTree as etree
+# import xml.etree.ElementTree as etree
+#
+# # This will store the maximum depth found during recursion
+# maxdepth = 0
+#
+# def depth(elem, level):
+#     """
+#     elem  -> current XML element (node) being processed
+#     level -> current depth in the XML tree
+#     """
+#
+#     global maxdepth
+#
+#     # Increase the current level
+#     level += 1
+#
+#     # Update maxdepth if needed
+#     if level > maxdepth:
+#         maxdepth = level
+#
+#     # Recurse through children
+#     for child in elem:
+#         depth(child, level)
+#
+#
+# if __name__ == '__main__':
+#     # Hardcoded sample input (XML with depth = 6)
+#     n = 13
+#     xml = (
+#         "<root>\n"
+#         "    <a>\n"
+#         "        <b>\n"
+#         "            <c>\n"
+#         "                <d>\n"
+#         "                    <e>\n"
+#         "                        <f>Deep</f>\n"
+#         "                    </e>\n"
+#         "                </d>\n"
+#         "            </c>\n"
+#         "        </b>\n"
+#         "    </a>\n"
+#         "</root>\n"
+#     )
+#
+#     tree = etree.ElementTree(etree.fromstring(xml))
+#     depth(tree.getroot(), -1)
+#     print(maxdepth)
 
-# This will store the maximum depth found during recursion
-maxdepth = 0
 
-def depth(elem, level):
+# =================================================================================================
+# NEW PRACTICE SETUP
+# HackerRank: Piling Up!
+# =================================================================================================
+
+from collections import deque
+
+def can_stack_cubes(blocks):
     """
-    elem  -> current XML element (node) being processed
-    level -> current depth in the XML tree
+    blocks -> deque of integers representing cube side lengths
+
+    Rules:
+    - You may take only from the LEFT or RIGHT end
+    - Each cube placed must be <= the previous cube placed
+    - Return True if stacking is possible, else False
     """
-
-    global maxdepth
-
-    # TODO 1:
-    # Increase the current level to represent going one step deeper
-    # (hint: level should change here)
-
-    # TODO 2:
-    # Compare the updated level with maxdepth
-    # If the current level is greater, update maxdepth
-
-    # TODO 3:
-    # Loop through each child element of `elem`
-    # For each child, recursively call depth(child, current_level)
-
-    pass  # remove after implementing
+    # TODO:
+    # 1. Track the size of the previously placed cube
+    # 2. At each step, compare leftmost and rightmost cubes
+    # 3. Choose a valid cube that does not break the stacking rule
+    # 4. If no valid move exists, return False
+    # 5. If all cubes are placed successfully, return True
+    pass
 
 
 if __name__ == '__main__':
-    # Number of lines of XML input
-    n = int(input())
+    # Hardcoded sample input (mirrors HackerRank format)
 
-    # Will hold the complete XML string
-    xml = ""
+    T = 2  # number of test cases
 
-    # Read XML input line by line
-    for i in range(n):
-        xml += input() + "\n"
+    test_cases = [
+        [4, 3, 2, 1, 3, 4],  # Expected: Yes
+        [1, 3, 2]           # Expected: No
+    ]
 
-    # Parse XML into an ElementTree
-    tree = etree.ElementTree(etree.fromstring(xml))
+    for blocks in test_cases:
+        # Convert list to deque for efficient pops from both ends
+        cube_deque = deque(blocks)
 
-    # Start recursion at root
-    # Initial level is -1 so root becomes level 0
-    depth(tree.getroot(), -1)
+        # Run your logic
+        result = can_stack_cubes(cube_deque)
 
-    # Output the maximum depth found
-    print(maxdepth)
-
+        # Print result in HackerRank format
+        print("Yes" if result else "No")
