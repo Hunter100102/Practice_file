@@ -1014,19 +1014,7 @@ def can_stack_cubes(blocks):
     # 3. Choose a valid cube that does not break the stacking rule
     # 4. If no valid move exists, return False
     # 5. If all cubes are placed successfully, return True
-    stack = []
-    n = len(blocks)
-    middle = 0
-
-    if n//2 == 0:
-        middle = n//2
-    else:
-        middle = n//2
-    
-    for block in blocks:
-        stack_len = len(stack)
-        if block >= blocks[n]
-            
+    pass
 
 
 if __name__ == '__main__':
