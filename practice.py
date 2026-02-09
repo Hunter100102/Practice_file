@@ -1000,21 +1000,30 @@
 from collections import deque
 
 def can_stack_cubes(blocks):
-    """
-    blocks -> deque of integers representing cube side lengths
+    stack = []
+    n = len(blocks)
+    middle = 0
 
-    Rules:
-    - You may take only from the LEFT or RIGHT end
-    - Each cube placed must be <= the previous cube placed
-    - Return True if stacking is possible, else False
-    """
-    # TODO:
-    # 1. Track the size of the previously placed cube
-    # 2. At each step, compare leftmost and rightmost cubes
-    # 3. Choose a valid cube that does not break the stacking rule
-    # 4. If no valid move exists, return False
-    # 5. If all cubes are placed successfully, return True
-    pass
+    if n//2 == 0:
+        print (n//2)
+    else:
+        middle = n//2
+    
+    for block in blocks:
+        stack_len = len(stack)
+        print(stack_len)
+        last = stack[stack_len]
+        
+        if block >= blocks[n] and block <= last:
+            stack = stack.append(block)
+            block = block.pop(block.index())
+
+        elif block <= blocks[n] and block <= last:
+            stack = stack.append(block[n])
+            block = block.pop(block[n])
+        
+        else:
+            return False
 
 
 if __name__ == '__main__':
