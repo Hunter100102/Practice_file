@@ -1001,30 +1001,30 @@
 from collections import deque
 
 def can_stack_cubes(blocks):
-    stack = []
-    n = len(blocks)
+    m = len(blocks)
     middle = 0
 
-    if n//2 == 0:
-        print (n//2)
+    if m//2==0:
+        middle = m//2
     else:
-        middle = n//2
-    
-    for block in blocks:
-        stack_len = len(stack)
-        print(stack_len)
-        last = stack[stack_len]
-        
-        if block >= blocks[n] and block <= last:
-            stack = stack.append(block)
-            block = block.pop(block.index())
+        middle = m//2
+    print(middle)
+         
+    left = blocks[0]
+    right = blocks[-1]
 
-        elif block <= blocks[n] and block <= last:
-            stack = stack.append(block[n])
-            block = block.pop(block[n])
-        
-        else:
-            return False
+    stack = []
+    n = len(stack)
+    
+    if n>0:
+        last = stack[n]
+    else:
+        last = 0
+
+
+    if left >= right:
+        stack.append(left)
+
 
 
 if __name__ == '__main__':
