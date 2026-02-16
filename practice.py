@@ -1005,31 +1005,26 @@ def can_stack_cubes(blocks):
     middle = 0
 
     if m%2==0:
-        middle = m//2
+        middle = (m-1)//2
     else:
         middle = m//2
-         
+    #print(middle)
+    
     left = blocks[0]
     right = blocks[-1]
 
-    stack = []
-    n = len(stack)
-    
-    if n>0:
-        last = stack[n]
+    if left >= right:
+        print(left)
+        if blocks.index(left) == middle:
+            blocks = blocks.popleft()
+            return True
+    elif left <= right:
+        print(right)
+        if blocks.index(right) == middle:
+            return True
     else:
-        last = 0
-
-
-    if left >= right and left <= last:
-        stack.append(left)
-        blocks = blocks.popleft()
-    elif left <= right and right <= last:
-        stack.append(right)
-        blocks = blocks.pop()
-    else:
-        return False
-    
+        #return False
+        pass
 
 
 
