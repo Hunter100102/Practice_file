@@ -1004,7 +1004,7 @@ def can_stack_cubes(blocks):
     m = len(blocks)
     middle = 0
 
-    if m//2==0:
+    if m%2==0:
         middle = m//2
     else:
         middle = m//2
