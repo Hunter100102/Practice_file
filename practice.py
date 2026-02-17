@@ -1008,42 +1008,38 @@ def can_stack_cubes(blocks):
         middle = (m-1)//2
     else:
         middle = m//2
-    #print(middle)
+    print(middle)
     
     left = blocks[0]
     right = blocks[-1]
 
-    if left >= right:
-        print(left)
-        if blocks.index(left) == middle:
-            blocks = blocks.popleft()
-            return True
-    elif left <= right:
-        print(right)
-        if blocks.index(right) == middle:
-            return True
-    else:
-        #return False
-        pass
+    for i in range(0,middle+1):
+        if left >= right:
+            print(left)
+            if blocks.index(left) == middle:
+                blocks = blocks.popleft()
+                return True
+        elif left <= right:
+            print(right)
+            if blocks.index(right) == middle:
+                return True
+        else:
+            return False
+            
 
 
 
-if __name__ == '__main__':
-    # Hardcoded sample input (mirrors HackerRank format)
+# --- Hardcoded SAMPLE INPUT for local practice (mimics HackerRank STDIN) ---
+import sys, io
 
-    T = 2  # number of test cases
+sample_input = """\
+2
+6
+4 3 2 1 3 4
+3
+1 3 2
+"""
 
-    test_cases = [
-        [4, 3, 2, 1, 3, 4],  # Expected: Yes
-        [1, 3, 2]           # Expected: No
-    ]
-
-    for blocks in test_cases:
-        # Convert list to deque for efficient pops from both ends
-        cube_deque = deque(blocks)
-
-        # Run your logic
-        result = can_stack_cubes(cube_deque)
-
-        # Print result in HackerRank format
-        print("Yes" if result else "No")
+# Comment the next line out when submitting to HackerRank:
+sys.stdin = io.StringIO(sample_input)
+# --------------------------------------------------------------------------
