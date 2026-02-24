@@ -1000,46 +1000,27 @@
 
 from collections import deque
 
-def can_stack_cubes(blocks):
-    m = len(blocks)
-    middle = 0
+T = int(input())
 
-    if m%2==0:
-        middle = (m-1)//2
-    else:
-        middle = m//2
-    print(middle)
+for cases in range(T):
+    n = int(input())
     
-    left = blocks[0]
-    right = blocks[-1]
-
-    for i in range(0,middle+1):
+    if n % 2 == 0:
+        middle = (n-1)//2
+    else:
+        middle = n//2
+        
+    block = input()
+    
+    for x in range(middle):
+        left = block[x]
+        right = block[(-1*x)-1]
+        
         if left >= right:
-            print(left)
-            if blocks.index(left) == middle:
-                blocks = blocks.popleft()
-                return True
-        elif left <= right:
-            print(right)
-            if blocks.index(right) == middle:
-                return True
-        else:
-            return False
-            
-
-
-
-# --- Hardcoded SAMPLE INPUT for local practice (mimics HackerRank STDIN) ---
-import sys, io
-
-sample_input = """\
-2
-6
-4 3 2 1 3 4
-3
-1 3 2
-"""
-
-# Comment the next line out when submitting to HackerRank:
-sys.stdin = io.StringIO(sample_input)
-# --------------------------------------------------------------------------
+            if block.index(left) == middle:
+                print("Yes")
+            elif left <= right:
+                if block.index(right) == middle:
+                    print("Yes")
+            else:
+                print("No")
