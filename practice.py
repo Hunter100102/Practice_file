@@ -1013,3 +1013,24 @@ for cases in range(T):
         middle = (n-1)//2
     else:
         middle = n//2
+        
+    block = list(entry)
+    first = 0
+    last = len(block)-1
+    
+    for x in range(middle):
+        left = block[first]
+        right = block[last]
+        
+        if left >= right:
+            if block.index(left) == middle:
+                print("Yes")
+            else:
+                first += 1
+        elif left <= right:
+            if block.index(right) == middle:
+                print("Yes")
+            else:
+                last -= 1
+        else:
+            print("No")
