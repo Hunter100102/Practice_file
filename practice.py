@@ -999,28 +999,17 @@
 # =================================================================================================
 
 from collections import deque
+entry = deque([4, 3, 2, 1, 3, 4])
+cases = 2
+number_of_items = 6
 
-T = int(input())
+
+T = cases
 
 for cases in range(T):
-    n = int(input())
+    n = number_of_items
     
     if n % 2 == 0:
         middle = (n-1)//2
     else:
         middle = n//2
-        
-    block = input()
-    
-    for x in range(middle):
-        left = block[x]
-        right = block[(-1*x)-1]
-        
-        if left >= right:
-            if block.index(left) == middle:
-                print("Yes")
-            elif left <= right:
-                if block.index(right) == middle:
-                    print("Yes")
-            else:
-                print("No")
