@@ -999,9 +999,9 @@
 # =================================================================================================
 
 from collections import deque
-entry = deque([4, 3, 2, 1, 3, 4])
-cases = 2
-number_of_items = 6
+entry = deque([1,3,2])
+cases = 1
+number_of_items = 3
 
 
 T = cases
@@ -1018,19 +1018,24 @@ for cases in range(T):
     first = 0
     last = len(block)-1
     
-    for x in range(middle):
+    for x in range(0,len(block)):
+        print(f"x: {x}")
         left = block[first]
         right = block[last]
         
         if left >= right:
+            print(f"left: {left} and right: {right}")
             if block.index(left) == middle:
                 print("Yes")
             else:
+                print(f"first: {first}")
                 first += 1
         elif left <= right:
+            print(f"right: {right} and left: {left}")
             if block.index(right) == middle:
                 print("Yes")
             else:
+                print(f"last: {last}")
                 last -= 1
         else:
             print("No")
