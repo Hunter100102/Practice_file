@@ -1008,6 +1008,7 @@ T = cases
 
 for cases in range(T):
     n = number_of_items
+    middle = 0
     
     if n % 2 == 0:
         middle = (n-1)//2
@@ -1020,30 +1021,16 @@ for cases in range(T):
     stack = []
     left = block[first]
     right = block[last]
-
-    for starter in range (1):
-        if left >= right:
-            stack = stack.append(right)
-        else:
-            stack = stack.append(left)
-            print(f"stack: {stack}")
     
-    for x in range(1,len(block)):
-        print(f"x: {x}")
+    if left <= right:
+        print(f"left: {left}")
+        stack.append(left)
+        block = block.pop(first)
+    else: 
+        print(f"right: {right}")
+        stack = stack.append(right)
+        block = block.pop(last)
         
-        if left >= right:
-            print(f"left: {left} and right: {right}")
-            if block.index(left) == middle:
-                print("Yes")
-            else:
-                print(f"first: {first}")
-                first += 1
-        elif left <= right:
-            print(f"right: {right} and left: {left}")
-            if block.index(right) == middle:
-                print("Yes")
-            else:
-                print(f"last: {last}")
-                last -= 1
-        else:
-            print("No")
+    print(f"stack: {stack}")
+    print(f"block: {block}")
+    
