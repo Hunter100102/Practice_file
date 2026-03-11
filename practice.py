@@ -1017,11 +1017,19 @@ for cases in range(T):
     block = list(entry)
     first = 0
     last = len(block)-1
+    stack = []
+    left = block[first]
+    right = block[last]
+
+    for starter in range (1):
+        if left >= right:
+            stack = stack.append(right)
+        else:
+            stack = stack.append(left)
+            print(f"stack: {stack}")
     
-    for x in range(0,len(block)):
+    for x in range(1,len(block)):
         print(f"x: {x}")
-        left = block[first]
-        right = block[last]
         
         if left >= right:
             print(f"left: {left} and right: {right}")
