@@ -1025,12 +1025,15 @@ for cases in range(T):
     if left <= right:
         print(f"left: {left}")
         stack.append(left)
-        block = block.pop(first)
+        block.pop(first)
     else: 
         print(f"right: {right}")
-        stack = stack.append(right)
-        block = block.pop(last)
+        stack.append(right)
+        block.pop(last)
         
-    print(f"stack: {stack}")
-    print(f"block: {block}")
+    stack_last = stack[len(stack)-1]
+    
+    if left >= right and left <= stack_last:
+        stack.append(left)
+        block.pop
     
