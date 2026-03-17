@@ -1022,18 +1022,33 @@ for cases in range(T):
     left = block[first]
     right = block[last]
     
-    if left <= right:
+    if left >= right:
         print(f"left: {left}")
         stack.append(left)
         block.pop(first)
     else: 
-        print(f"right: {right}")
         stack.append(right)
         block.pop(last)
+        print(block)
         
     stack_last = stack[len(stack)-1]
-    
+
+
     if left >= right and left <= stack_last:
-        stack.append(left)
-        block.pop
-    
+        stack.append(block[0])
+        block.pop(first)
+        print(f"stack: {stack} block: {block} first: {first}")
+        print(f"Middle: {middle}")
+        if block.index(left) == middle:
+            print('True')
+    elif left <= right and right <= stack_last:
+        print(f"Stack prior: {stack}")
+        last = len(block)-1
+        stack.append(right)
+        block.pop(last)
+        print(f"stack: {stack} block: {block} last: {last}")
+        print(f"Middle: {middle}")
+        if block.index(left) == middle:
+            print('True')
+    else:
+        print('False')
