@@ -998,57 +998,66 @@
 #Learn how to work with Deque popleft, pop, etc. 
 # =================================================================================================
 
-from collections import deque
-entry = deque([1,3,2])
-cases = 1
-number_of_items = 3
+# from collections import deque
+# entry = deque([1000000842 ,1000000721 ,1000000671 ,1000000663 ,1000000626 ,1000000520 ,1000000126 ,999999978 ,1000000266 ,1000000501])
+# cases = 1
+# number_of_items = 10
 
 
-T = cases
+# T = cases
 
-for cases in range(T):
-    n = number_of_items
-    middle = 0
+# for cases in range(T):
+#     n = number_of_items
+#     middle = 0
     
-    if n % 2 == 0:
-        middle = (n-1)//2
-    else:
-        middle = n//2
-        
-    block = list(entry)
-    first = 0
-    last = len(block)-1
-    stack = []
-    left = block[first]
-    right = block[last]
+#     if n % 2 == 0:
+#         middle = (n-1)//2
+#     else:
+#         middle = n//2
+
+#     block = list(entry)
+#     pile = []
     
-    if left >= right:
-        print(f"left: {left}")
-        stack.append(left)
-        block.pop(first)
-    else: 
-        stack.append(right)
-        block.pop(last)
-        print(block)
-        
-    stack_last = stack[len(stack)-1]
+#     for counter in range(0,middle + 1):
+#         left = block[0]
+#         last = len(block)-1
+#         right = block[last]
+#         length = len(pile)
+#         print(length)
+
+#         if counter == 0:
+#             if left <= right:
+#                 pile.append(right)
+#                 block.pop(last)
+#             else:
+#                 pile.append(left)
+#                 block.pop(0)
+#         elif right >= left and right <= pile[length-1]:
+#             pile.append(right)
+#             block.pop(last)
+#             if counter == middle:
+#                 print("Yes")
+#         elif left >= right and left <= pile[length-1]:
+#             pile.append(left)
+#             block.pop(0)
+#             if counter == middle:
+#                 print("Yes")
+#         else:
+#             print("No")
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#  Working with Regex
+import re
+
+def is_valid_regex(pattern):
+    # Your logic goes here
+    pass
 
 
-    if left >= right and left <= stack_last:
-        stack.append(block[0])
-        block.pop(first)
-        print(f"stack: {stack} block: {block} first: {first}")
-        print(f"Middle: {middle}")
-        if block.index(left) == middle:
-            print('True')
-    elif left <= right and right <= stack_last:
-        print(f"Stack prior: {stack}")
-        last = len(block)-1
-        stack.append(right)
-        block.pop(last)
-        print(f"stack: {stack} block: {block} last: {last}")
-        print(f"Middle: {middle}")
-        if block.index(left) == middle:
-            print('True')
-    else:
-        print('False')
+if __name__ == "__main__":
+    t = int(input().strip())
+
+    for _ in range(t):
+        pattern = input().strip()
+
+        result = is_valid_regex(pattern)
+        print(result)
