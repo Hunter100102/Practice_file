@@ -1050,14 +1050,18 @@ import re
 
 def is_valid_regex(pattern):
     # Your logic goes here
-    pass
+    try:
+        re.compile(pattern)
+        return True
+    except re.error:
+        return False
 
+# Hardcoded test cases (acts like HackerRank input)
+test_cases = [
+    r".*\+",   # should be True
+    r".*+",    # should be False
+]
 
-if __name__ == "__main__":
-    t = int(input().strip())
-
-    for _ in range(t):
-        pattern = input().strip()
-
-        result = is_valid_regex(pattern)
-        print(result)
+for pattern in test_cases:
+    result = is_valid_regex(pattern)
+    print(f"{pattern} -> {result}")
