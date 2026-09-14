@@ -1046,22 +1046,27 @@
 #             print("No")
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #  Working with Regex
-import re
+#import re
 
-def is_valid_regex(pattern):
+#def is_valid_regex(pattern):
     # Your logic goes here
-    try:
-        re.compile(pattern)
-        return True
-    except re.error:
-        return False
+#    try:
+#        re.compile(pattern)
+#        return True
+#    except re.error:
+#        return False
 
 # Hardcoded test cases (acts like HackerRank input)
-test_cases = [
-    r".*\+",   # should be True
-    r".*+",    # should be False
-]
+#test_cases = [
+#    r".*\+",   # should be True
+#    r".*+",    # should be False
+#]
 
-for pattern in test_cases:
-    result = is_valid_regex(pattern)
-    print(f"{pattern} -> {result}")
+#for pattern in test_cases:
+#    result = is_valid_regex(pattern)
+#    print(f"{pattern} -> {result}")
+#----------------------------------------------------------------Dataframes and manipulations---------------------------------------------------
+import pandas as pd
+
+df = pd.read_csv("C:/Users/William/Downloads/field_service_practice_dataset.csv", index_col=0)
+print(df)
