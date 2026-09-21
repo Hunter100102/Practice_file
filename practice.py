@@ -1069,4 +1069,6 @@
 import pandas as pd
 
 df = pd.read_csv("C:/Users/William/Downloads/field_service_practice_dataset.csv", index_col=0)
-print(df)
+specific_values = df.loc[df.hours_worked > 12]
+values = df.loc[['JOB-1001','JOB-1002','JOB-1015','JOB-1477'],['technician','hours_worked','service_type']]
+print(values)
